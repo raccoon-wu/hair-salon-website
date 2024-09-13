@@ -1,8 +1,13 @@
+import Navbar from "@/Components/Navbar";
+import LandingPage from "@/Components/Landing";
+import Footer from "@/Components/Footer";
 
 export default function Home() {
   return (
     <>
-    <p className="text-3xl font-bold">com to hair salon</p>
+    <Navbar></Navbar>
+    <LandingPage></LandingPage>
+    <Footer></Footer>
     </>
   );
 }
