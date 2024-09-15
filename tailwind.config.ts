@@ -8,9 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'jockey': ['"Jockey One"', 'sans-serif'],  // Add Jockey One
+        'bellota': ['"Bellota Text"', 'sans-serif'], // Add Bellota Text (optional)
+        'jost': ['"Jost"', 'sans-serif'],           // Add Jost (optional)
+      },
+      
       colors: {
         // setting up preset colors
-        'dark-gray': '#1C1C1C',
+        'nav-dark-gray': '#121111',
         'mid-gray': '#2E2E2E',
         'light-gray': 'E9E9E9',
 
