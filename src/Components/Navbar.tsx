@@ -1,3 +1,4 @@
+import "../app/globals.css";
 
 export default function Navbar() {
     return (
@@ -9,7 +10,7 @@ export default function Navbar() {
           </div>
           <div className="bg-yellow-950 m-10 
                           w-2/3 xl:w-3/4 ">
-              <ul className="font-jockey flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-40  text-zinc-100">
+              <ul className="flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-40 text-zinc-100">
                 <li>About</li>
                 <li>Gallery</li>
                 <li>Services</li>
