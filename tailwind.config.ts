@@ -9,7 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['JockeyOne', 'sans-serif'],  
+        Jockey: ['JockeyOne', 'sans-serif'],
+        Bellota: ['BellotaText', 'sans-serif'],
+        JostR: ['JostR', 'sans-serif'],
+        JostM: ['JostM', 'sans-serif'],    
       },
       
       colors: {

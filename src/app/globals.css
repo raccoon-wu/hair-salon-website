@@ -2,36 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/* (How to apply google font: select font -> get embed code -> web -> @import -> copy '@import url('...')' at the top ->
-copy css within {} and plug into below like ':root')
-(link import only seems to work with 'variable' fonts and not static ones)
-
-Importing Google-Font: Jost */
-
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+/*Importing google fonts through a link seem to not work? They would apply but not show?
+  Currently importing locally and applying through tailwind.config.ts*/
 
 @font-face{
   font-family: 'JockeyOne';
-  src: url('./Fonts/JockeyOne.ttf') format('ttf');
+  src: url('./Fonts/JockeyOne.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-:root {
-
-  /*paste css class code here to apply the font*/
-  font-family: "Jost", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
+@font-face{
+  font-family: 'BellotaText';
+  src: url('./Fonts/BellotaText.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
+}
+
+@font-face{
+  font-family: 'JostR';
+  src: url('./Fonts/JostRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'JostM';
+  src: url('./Fonts/JostMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  @apply font-JostR;
 
   background-color: #1C1C1C;
 }
 
 ul li {
- @apply font-custom;
+  @apply font-Jockey;
 }
 
+h1 {
+  @apply font-Bellota;
+  color: white;
+}
+
+h2{
+  @apply font-JostM;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

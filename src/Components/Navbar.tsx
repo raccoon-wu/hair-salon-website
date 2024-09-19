@@ -4,13 +4,13 @@ export default function Navbar() {
     return (
       <>
       <div className="flex h-20 bg-nav-dark-gray items-center">
-          <div className="bg-blue-50 ml-7 
-                          w-1/3 xl:w-1/4 ">
-              <p className="text-3xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent"> HAIR YOU GO </p>
+          <div className=" ml-10 
+                          w-1/3 xl:w-1/4 min-w-fit">
+              <h2 className="text-4xl font-bold pt-5 bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent "> HAIR YOU GO </h2>
           </div>
-          <div className="bg-yellow-950 m-10 
+          <div className=" m-10 xl:m-20
                           w-2/3 xl:w-3/4 ">
-              <ul className="flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-40 text-zinc-100">
+              <ul className="flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-36 pt-5 text-zinc-300 text-xl">
                 <li>About</li>
                 <li>Gallery</li>
                 <li>Services</li>
@@ -18,6 +18,7 @@ export default function Navbar() {
               </ul>
           </div>
       </div>
+      <div className="self-center h-1.5 w-[calc(100vw-6rem)] ml-10 mr-10 bg-dark-gold"></div>
       </>
     );
   }
