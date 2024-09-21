@@ -1,12 +1,17 @@
 import "../app/globals.css";
+import { RiScissorsFill } from "react-icons/ri";
 
 export default function Navbar() {
+
+  const iconStyling = ``;
+
     return (
       <>
       <div className="flex h-20 bg-nav-dark-gray items-center">
-          <div className=" ml-10 
+          <div className=" ml-10 flex flex-row h-full mt-4
                           w-1/3 xl:w-1/4 min-w-fit">
-              <h2 className="text-4xl font-bold pt-5 bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent "> HAIR YOU GO </h2>
+              <h2 className="text-4xl font-bold pt-5 bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent"> HAIR YOU GO </h2>
+              <RiScissorsFill size="2.3em" className="ml-1 h-full text-lighter-gold" style = {{transform: 'rotate(90deg)' }}/>
           </div>
           <div className=" m-10 xl:m-20
                           w-2/3 xl:w-3/4 ">

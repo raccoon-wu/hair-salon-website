@@ -1,20 +1,21 @@
 import Navbar from "@/Components/Navbar";
 import LandingPage from "@/Components/Landing";
 import Footer from "@/Components/Footer";
-import "./globals.css";
-import {Roboto} from "next/font/google"
+import Gallery from "@/Components/Gallery";
+import Reviews from "@/Components/Reviews";
+import Services from "@/Components/Services";
 
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: '400',
-})
+import "./globals.css";
 
 export default function Home() {
   return (
     <>
-    <Navbar></Navbar>
-    <LandingPage></LandingPage>
-    <Footer></Footer>
+    <Navbar/>
+    <LandingPage/>
+    <Reviews/>
+    <Gallery/>
+    <Services/>
+    <Footer/>
     </>
   );
 }
