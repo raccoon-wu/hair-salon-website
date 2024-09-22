@@ -5,8 +5,16 @@ export default function LandingPage() {
 
   const landingIcons = {
     size: "1.9em", 
-    className: "ml-1 h-full",
-    style: { color: '#FCE295' }
+    className: "ml-1 h-full ml-0 mr-0 md:ml-5 md:mr-5",
+    style: {
+      color: '#FCE295', 
+      minWidth: "1.8em",  // Set minimum width to 1.8em
+      minHeight: "1.8em"  // Set minimum height to 1.8em
+    }
+  };
+
+  const landingHeading = {
+    className: "text-4xl xl:text-5xl shorter-screen:2xl:text-5xl taller-screen:2xl:text-6xl text-center uppercase mb-3 min-w-fit whitespace-nowrap"
   };
 
     return (
@@ -17,11 +25,11 @@ export default function LandingPage() {
 
             <div className="flex flex-col w-1/2 ml-30 justify-center items-center">
 
-                <h1 className="text-4xl xl:text-7xl text-center uppercase mb-3 min-w-fit whitespace-nowrap">Your hair,</h1>
-                <h1 className="text-4xl xl:text-7xl text-center uppercase mb-5 min-w-fit whitespace-nowrap">our passion</h1>
-                <p className="text-xl text-center text-white max-w-md">With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.</p>
+                <h1 {...landingHeading}>Your hair,</h1>
+                <h1 {...landingHeading}>our passion</h1>
+                <p className="text-xl text-center text-white max-w-md mt-2">With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.</p>
 
-                    <div className='flex flex-row justify-evenly items-center h-10 w-full xl:w-3/5 mt-7'>
+                    <div className='flex flex-row justify-evenly items-center h-10 w-full lg:w-4/5 xl:w-3/5 mt-7'>
                     {/* {...xyz }is a spread operator. It's useful for copying components like:
                     const obj1 = { a: 1, b: 2 };
                     const obj2 = { ...obj1, c: 3 };

@@ -23,8 +23,12 @@ const config: Config = {
 
         'dark-gold': '#BD8E4D',
         'lighter-gold': '#FCE295',
+      },
 
-        'body-text': '#D5D1CA',
+      screens:{
+        // adding custom height breakpoints, 'raw' key allows one to define custom in media queries outside of predefined ones such as 'sm', 'lg' etc.
+        'shorter-screen': {'raw': '(max-height:950px)'},
+        'taller-screen': {'raw': '(min-height:951px)'},
       },
     },
   },
