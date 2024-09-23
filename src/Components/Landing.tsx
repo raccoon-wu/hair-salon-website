@@ -5,7 +5,7 @@ export default function LandingPage() {
 
   const landingIcons = {
     size: "1.9em", 
-    className: "ml-1 h-full ml-0 mr-0 md:ml-5 md:mr-5",
+    className: "ml-1 h-full ml-0 mr-0 md:ml-5 md:mr-5 cursor-pointer",
     style: {
       color: '#FCE295', 
       minWidth: "1.8em",  // Set minimum width to 1.8em
@@ -44,9 +44,17 @@ export default function LandingPage() {
                     // Now user is { name: 'John', age: 26 }
                     
                     */}
+                        <a href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer">
                         <FaGoogle {...landingIcons}/>
+                        </a>
+
+                        <a href="https://www.facebook.com/HYGforesthill" target="_blank" rel="noopener noreferrer">
                         <FaFacebook {...landingIcons}/>
-                        <FaInstagram {...landingIcons}/>
+                        </a>
+
+                        <a href="https://www.instagram.com/hygforesthill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram {...landingIcons} />
+                        </a>
                     </div>
             </div>
 

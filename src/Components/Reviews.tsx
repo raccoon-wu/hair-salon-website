@@ -4,35 +4,70 @@
 import { FaStar } from "react-icons/fa";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import React, { useState } from 'react';
+import ReviewBackground from '../app/Assets/Images/Comments.png';
 
 export default function Reviews() {
 
   const googleReviews: {stars: number; review: string; reviewer: string;}[] = [
     { stars:5,
-      review:"I would give my life savings to this shop cuz it's too good bro",
-      reviewer:"100% Real Person",
+      review:"Amazing experience, the team were extremely accomodating, friendly, experienced and I couldn’t be happier with the result.",
+      reviewer:"Mona Zhao",
     },
-    { stars:4,
-      review:"I likey cuz of me mummy",
-      reviewer:"Leon",
+    { stars:5,
+      review:"Showed a photo of what I wanted and got exactly that. Great hairdressers to talk to as well!",
+      reviewer:"Oliver To",
+    },
+    { stars:5,
+      review:"Mina did a great job with my hair. She understood what I required and worked well with my curls. She stayed past closing hours to get my hair done. Highly recommend for their excellent customer service and expertise!",
+      reviewer:"Prema Balasupramaniam",
+    },
+    { stars:5,
+      review:"I have been going to Mina weekly for wonderful blow wave and also have my colour . Excellent hairdresser",
+      reviewer:"Diane",
     },
   ];
-  
-  //Tracks which index to display since only one will display at a time
+
+    //Tracks which index to display since only one will display at a time
   const [reviewIndex, setReviewIndex] = useState(0);
   const currentReview = googleReviews[reviewIndex];
 
+    //Function to iterate through the reviews with modulo operator
+  const nextReview = () => {
+    //% is modulo operator and it ensures the index wraps around back to the start when it reaches the end
+    setReviewIndex((prevIndex) => (prevIndex + 1) % googleReviews.length);
+  }
+
+  const previousReview = () => {
+    setReviewIndex((prevIndex) => (prevIndex - 1 + googleReviews.length) % googleReviews.length);
+  }
+
+    //Function to display stars if they are 4 or 5 stars
+  const starsCount = () => {
+    let count: number = googleReviews[reviewIndex].stars;
+    if (count === 5){ 
+      return (      
+        <>             
+        <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+        </> )
+      } else if (count === 4){ 
+        return (      
+        <>             
+         <FaStar /><FaStar /><FaStar /><FaStar />
+        </> )
+      } else return null;
+  }
+
     return (
       <>
-        <div className="flex h-40 flex-col bg-white justify-center items-center">
+        <div className="flex h-44 flex-col w-full bg-[url('../app/Assets/Images/Comments.png')] bg-cover justify-center items-center m-0">
             <div className="flex flex-row">
-              <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+              {starsCount()}
             </div>
-            <p className="text-2xl font-bold">'{currentReview.review}'</p>
-            <p className="text-3xl font-bold">-{currentReview.reviewer}</p>
+            <p className="text-xl w-3/5 m-2 text-center">'{currentReview.review}'</p>
+            <p className="text-xl font-bold text-center">- {currentReview.reviewer}</p>
               <div className="flex flex-row absolute justify-between w-full">
-                <MdOutlineKeyboardArrowLeft size="2.5em" className="ml-5"/>
-                <MdOutlineKeyboardArrowRight size="2.5em" className="mr-5 "/>
+                <MdOutlineKeyboardArrowLeft size="2.5em" className="ml-5 cursor-pointer" onClick={previousReview}/>
+                <MdOutlineKeyboardArrowRight size="2.5em" className="mr-5 cursor-pointer" onClick={nextReview}/>
               </div>
             </div>
       </>

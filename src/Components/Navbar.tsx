@@ -14,10 +14,10 @@ export default function Navbar() {
           <div className=" m-10 xl:m-20
                           w-2/3 xl:w-3/4 ">
               <ul className="flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-36 pt-5 text-zinc-300 shorter-screen:text-xl taller-screen:text-2xl">
-                <li>About</li>
-                <li>Gallery</li>
-                <li>Services</li>
-                <li>Contact</li>
+                <li className="cursor-pointer">About</li>
+                <li className="cursor-pointer">Gallery</li>
+                <li className="cursor-pointer">Services</li>
+                <li className="cursor-pointer">Contact</li>
               </ul>
           </div>
       </div>
