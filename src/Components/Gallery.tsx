@@ -1,3 +1,7 @@
+"use client"; 
+import React, { useState } from "react";
+import { FaGoogle, FaInstagram, FaFacebook } from "react-icons/fa6";
+
 import image1 from '../app/Assets/Images/Gallery (1).png';
 import image2 from '../app/Assets/Images/Gallery (2).png';
 import image3 from '../app/Assets/Images/Gallery (3).png';
@@ -17,11 +21,16 @@ export default function Gallery() {
     className: "object-fit drop-shadow-md",
   }
 
+  const galleryButtonIcons = {
+    size: "1.5em", 
+  }
+  const [galleryButtonHover, setgalleryButtonHover] = useState(false);
+
     return (
       <>
-      <div className="w-full shorter-screen:h-[950px] taller-screen:h-[1150px] flex justify-center items-center bg-mid-gray">
+      <div className="w-full shorter-screen:h-[950px] taller-screen:h-[1150px] flex justify-evenly items-center bg-mid-gray px-20">
         
-        <div className="w-1/2 h-full flex flex-col justify-center items-center">
+        <div className="h-full flex flex-col justify-center items-center">
           <h2 className="shorter-screen:text-4xl taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"> OUR GALLERY </h2>
               <div className="grid grid-cols-3
               shorter-screen:w-[650px] shorter-screen:gap-5 shorter-screen:h-[650px] taller-screen:gap-7">
@@ -35,12 +44,22 @@ export default function Gallery() {
                   <img src={image9.src} alt="Gallery Image 9" {...imageFormat} />
                   <img src={image1.src} alt="Gallery Image 1" {...imageFormat} />
               </div>
-              <button className='h-14 shorter-screen:w-[650px] taller-screen:w-[800px] bg-gradient-to-r from-dark-gold to-lighter-gold rounded-xl shorter-screen:mt-4 taller-screen:mt-6'>View full gallery</button>
+
+              <div className='h-14 shorter-screen:w-[650px] taller-screen:w-[800px] bg-lighter-gold rounded-xl shorter-screen:mt-4 taller-screen:mt-6 text-lg flex flex-row justify-evenly items-center px-24'
+              onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
+                {galleryButtonHover?  
+                <>
+                <a href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer"><FaGoogle {...galleryButtonIcons}/></a>
+                <a href="https://www.facebook.com/HYGforesthill" target="_blank" rel="noopener noreferrer"><FaFacebook {...galleryButtonIcons}/></a>
+                <a href="https://www.instagram.com/hygforesthill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><FaInstagram {...galleryButtonIcons}/></a>
+                </> : "View full gallery"
+                }</div>
+
         </div>
 
-        <div className="w-1/2 h-full flex flex-col justify-center items-center">
+        <div className=" w-[400px] h-full flex flex-col justify-center items-center">
           <h2 className="shorter-screen:text-4xl taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"> OUR SERVICES </h2>
-          <div className=" w-3/5 shorter-screen:h-[730px] taller-screen:h-[890px] bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center">
+          <div className=" w-full shorter-screen:h-[730px] taller-screen:h-[890px] bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center">
           <p {...priceListBold}>Woman's</p>
               <p>Cut</p>
               <p>Colour</p>
