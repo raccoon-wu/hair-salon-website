@@ -45,7 +45,7 @@ export default function Gallery() {
                   <img src={image1.src} alt="Gallery Image 1" {...imageFormat} />
               </div>
 
-              <div className='h-14 shorter-screen:w-[650px] taller-screen:w-[800px] bg-lighter-gold rounded-xl shorter-screen:mt-4 taller-screen:mt-6 text-lg flex flex-row justify-evenly items-center px-24'
+              <button className='h-14 shorter-screen:w-[650px] taller-screen:w-[800px] bg-lighter-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-lg flex flex-row justify-evenly items-center px-24'
               onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
                 {galleryButtonHover?  
                 <>
@@ -53,7 +53,7 @@ export default function Gallery() {
                 <a href="https://www.facebook.com/HYGforesthill" target="_blank" rel="noopener noreferrer"><FaFacebook {...galleryButtonIcons}/></a>
                 <a href="https://www.instagram.com/hygforesthill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><FaInstagram {...galleryButtonIcons}/></a>
                 </> : "View full gallery"
-                }</div>
+                }</button>
 
         </div>
 
