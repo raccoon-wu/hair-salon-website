@@ -21,13 +21,13 @@ export default function LandingPage() {
       <>
       <div className="flex flex-row">
 
-        <div className="flex w-1/2 h-[calc(100vh-5rem)] justify-center items-center">
+        <div className="flex w-1/2 h-[calc(100vh-5rem)] min-h-[600px] justify-center items-center">
 
             <div className="flex flex-col w-1/2 ml-30 justify-center items-center">
 
                 <h1 {...landingHeading}>Your hair,</h1>
                 <h1 {...landingHeading}>our passion</h1>
-                <p className="text-xl text-center text-white max-w-md mt-2">With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.</p>
+                <p className="text-base lg:text-xl text-center text-white max-w-md mt-2 ">With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.</p>
 
                     <div className='flex flex-row justify-evenly items-center h-10 w-full lg:w-4/5 xl:w-3/5 mt-7'>
                     {/* {...xyz }is a spread operator. It's useful for copying components like:
@@ -67,7 +67,7 @@ export default function LandingPage() {
         xl: 1280px
         2xl: 1536px
          */}
-            <div className="w-1/2 h-[calc(100vh-5rem)] overflow-hidden">
+            <div className="w-1/2 h-fulloverflow-hidden">
               <img src={FPDisplay.src} className='h-full w-full object-cover object-left'/>
                 {/* <img src={FPDisplay.src} className='absolute h-full scale-[1.5] right-0 top-[50px] translate-x-[250px] xl:translate-x-[100px] 2xl:-translate-x-[100px] object-cover'/> */}
             </div>

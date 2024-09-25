@@ -1,4 +1,5 @@
 "use client"; 
+import { FaArrowRight } from "react-icons/fa6";
 
 import {
   APIProvider,
@@ -11,21 +12,21 @@ import {
 export default function Footer() {
   const salonPosition = { lat: -37.83516, lng:145.16608}
   const footerText = {
-    className: "text-white my-2",
+    className: "lg:text-base text-white my-2",
   };
 
   const footerTitle = {
-    className: "text-2xl"
+    className: "text- lg:text-2xl"
   }
 
     return (
       <>
       <div className="self-center h-1.5 w-[calc(100vw-6rem)] ml-10 mr-10 bg-dark-gold"></div>
-        <div className="h-[400px] flex flex-row justify-evenly items-center">
+        <div className="h-[400px] flex flex-row justify-evenly items-center my-0 lg:my-4">
             <div>
               {/* ! is added as a non-null assertion operator since I'm confident that the variable will always be set in environment */}
               <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
-                <div className="h-[300px] w-[300px] border-4 border-yellow-50">
+                <div className="h-[200px] w-[200px] xl:h-[300px] xl:w-[300px] border-4 border-yellow-50">
                   <Map defaultZoom={15} defaultCenter={salonPosition} mapId={process.env.NEXT_PUBLIC_MAP_ID}>
                     <AdvancedMarker position={salonPosition}></AdvancedMarker>
                   </Map>
@@ -55,7 +56,9 @@ export default function Footer() {
 
               <h1 {...footerTitle}>ADDRESS:</h1>
               <p {...footerText}>40 Mahoneys Rd, Forest Hill VIC 3131</p>
-              <button className="mt-4 w-full h-12 rounded-2xl bg-gray-700 drop-shadow-lg text-lighter-gold hover:border-2 border-yellow-50">Find us on Google</button>
+              <div className="flex flex-row mt-4 w-full h-12 rounded-2xl bg-zinc-700 drop-shadow-lg text-lighter-gold justify-center items-center cursor-pointer
+              hover:border-2 border-yellow-50">
+                <p className="mr-1">Find us on Google</p><FaArrowRight /> </div>
             </div>
         </div>
       </>

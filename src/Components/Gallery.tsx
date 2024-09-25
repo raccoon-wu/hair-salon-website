@@ -24,16 +24,26 @@ export default function Gallery() {
   const galleryButtonIcons = {
     size: "1.5em", 
   }
+
+  const goldTitles = {
+    className: "text-3xl lg:text-4xl 2xl:shorter-screen:text-4xl 2xl:taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"
+  };
+
   const [galleryButtonHover, setgalleryButtonHover] = useState(false);
 
     return (
       <>
-      <div className="w-full shorter-screen:h-[950px] taller-screen:h-[1150px] flex justify-evenly items-center bg-mid-gray px-20">
+      <div className="w-full py-16 lg:py-24 flex justify-evenly items-center bg-mid-gray px-5 xl:px-20">
         
         <div className="h-full flex flex-col justify-center items-center">
-          <h2 className="shorter-screen:text-4xl taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"> OUR GALLERY </h2>
+          <h2 {...goldTitles}> OUR GALLERY </h2>
               <div className="grid grid-cols-3
-              shorter-screen:w-[650px] shorter-screen:gap-5 shorter-screen:h-[650px] taller-screen:gap-7">
+              w-[400px] h-[400px] gap-3
+              lg:w-[500px] lg:h-[500px] lg:gap-4
+              xl:w-[600px] xl:h-[600px] xl:gap-5
+              2xl:w-[800px] 2xl:h-[800px] 2xl:gap-7
+
+              ">
                   <img src={image2.src} alt="Gallery Image 2" {...imageFormat} />
                   <img src={image3.src} alt="Gallery Image 3" {...imageFormat} />
                   <img src={image4.src} alt="Gallery Image 4" {...imageFormat} />
@@ -45,7 +55,8 @@ export default function Gallery() {
                   <img src={image1.src} alt="Gallery Image 1" {...imageFormat} />
               </div>
 
-              <button className='h-14 shorter-screen:w-[650px] taller-screen:w-[800px] bg-lighter-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-lg flex flex-row justify-evenly items-center px-24'
+              <button className='h-12 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:shorter-screen:w-[650px] 2xl:taller-screen:w-[800px] 
+               bg-lighter-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24'
               onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
                 {galleryButtonHover?  
                 <>
@@ -57,9 +68,10 @@ export default function Gallery() {
 
         </div>
 
-        <div className=" w-[400px] h-full flex flex-col justify-center items-center">
-          <h2 className="shorter-screen:text-4xl taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"> OUR SERVICES </h2>
-          <div className=" w-full shorter-screen:h-[730px] taller-screen:h-[890px] bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center">
+        <div className="ml-4 lg:ml-0 flex flex-col justify-center items-center min-w-fit">
+          <h2  {...goldTitles}> OUR SERVICES </h2>
+          <div className=" w-[300px] h-[475px] lg:w-[350px] lg:h-[565px] xl:h-[665px] 2xl:shorter-screen:h-[860px] 2xl:taller-screen:h-[890px] 2xl:w-[500px]
+          bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center">
           <p {...priceListBold}>Woman's</p>
               <p>Cut</p>
               <p>Colour</p>

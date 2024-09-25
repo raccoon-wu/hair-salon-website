@@ -3,6 +3,10 @@ import { RiScissorsFill } from "react-icons/ri";
 
 export default function Navbar() {
 
+  const navButtonStyle = {
+    className: "cursor-pointer min-w-fit font-xl",
+  };
+
     return (
       <>
       <div className="flex shorter-screen:h-20 taller-screen:h-24 bg-nav-dark-gray items-center">
@@ -13,10 +17,11 @@ export default function Navbar() {
           </div>
           <div className=" m-10 xl:m-20
                           w-2/3 xl:w-3/4 ">
-              <ul className="flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-36 pt-5 text-zinc-300 shorter-screen:text-xl taller-screen:text-2xl">
-                <li className="cursor-pointer">About</li>
-                <li className="cursor-pointer">Gallery & Services</li>
-                <li className="cursor-pointer">Contact</li>
+              <ul className="flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-36 pt-5 text-zinc-300 
+              text-md lg:shorter-screen:text-xl lg:taller-screen:text-2xl">
+                <li>About</li>
+                <li>Gallery & Services</li>
+                <li>Contact</li>
               </ul>
           </div>
       </div>
