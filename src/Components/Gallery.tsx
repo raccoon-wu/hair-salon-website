@@ -23,10 +23,11 @@ export default function Gallery() {
 
   const galleryButtonIcons = {
     size: "1.5em", 
+    className: "hover:scale-125 duration-500",
   }
 
   const goldTitles = {
-    className: "text-3xl lg:text-4xl 2xl:shorter-screen:text-4xl 2xl:taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"
+    className: "cursor-default text-3xl lg:text-4xl 2xl:shorter-screen:text-4xl 2xl:taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"
   };
 
   const [galleryButtonHover, setgalleryButtonHover] = useState(false);
@@ -37,7 +38,7 @@ export default function Gallery() {
         
         <div className="h-full flex flex-col justify-center items-center">
           <h2 {...goldTitles}> OUR GALLERY </h2>
-              <div className="grid grid-cols-3
+              <div className="grid grid-cols-3 duration-500
               w-[400px] h-[400px] gap-3
               lg:w-[500px] lg:h-[500px] lg:gap-4
               xl:w-[600px] xl:h-[600px] xl:gap-5
@@ -55,8 +56,9 @@ export default function Gallery() {
                   <img src={image1.src} alt="Gallery Image 1" {...imageFormat} />
               </div>
 
-              <button className='h-12 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:shorter-screen:w-[650px] 2xl:taller-screen:w-[800px] 
-               bg-lighter-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24'
+              <button className='h-12 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[800px] 
+               bg-bg-gray rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
+               duration-500 hover:scale-110 hover:bg-lighter-gold'
               onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
                 {galleryButtonHover?  
                 <>
@@ -71,7 +73,7 @@ export default function Gallery() {
         <div className="ml-4 lg:ml-0 flex flex-col justify-center items-center min-w-fit">
           <h2  {...goldTitles}> OUR SERVICES </h2>
           <div className=" w-[300px] h-[475px] lg:w-[350px] lg:h-[565px] xl:h-[665px] 2xl:shorter-screen:h-[860px] 2xl:taller-screen:h-[890px] 2xl:w-[500px]
-          bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center">
+          bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center duration-500">
           <p {...priceListBold}>Woman's</p>
               <p>Cut</p>
               <p>Colour</p>

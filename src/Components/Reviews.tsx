@@ -59,15 +59,15 @@ export default function Reviews() {
 
     return (
       <>
-        <div className="flex h-52 lg:h-48 flex-col w-full bg-[url('../app/Assets/Images/Comments.png')] bg-cover justify-center items-center m-0">
-            <div className="flex flex-row">
+        <div className="flex h-52 lg:h-48 flex-col w-full bg-[url('../app/Assets/Images/Comments.png')] bg-cover bg-center justify-center items-center m-0 duration-500">
+            <div className="flex flex-row hover:scale-125 duration-500 my-2">
               {starsCount()}
             </div>
-            <p className="text-base lg:text-xl w-3/5 m-2 text-center">'{currentReview.review}'</p>
-            <p className="text-base lg:text-xl font-bold text-center">- {currentReview.reviewer}</p>
-              <div className="flex flex-row absolute justify-between w-full">
-                <MdOutlineKeyboardArrowLeft size="2.5em" className="ml-5 cursor-pointer" onClick={previousReview}/>
-                <MdOutlineKeyboardArrowRight size="2.5em" className="mr-5 cursor-pointer" onClick={nextReview}/>
+            <p className="z-10 text-base lg:text-xl w-3/5 m-2 text-center hover:scale-110 cursor-default duration-500">'{currentReview.review}'</p>
+            <p className="z-10 text-base lg:text-xl font-bold text-center hover:scale-110 cursor-default duration-500">- {currentReview.reviewer}</p>
+              <div className="z-0 flex flex-row absolute justify-between w-full">
+                <MdOutlineKeyboardArrowLeft size="2.5em" className="ml-5 cursor-pointer hover:scale-150 hover:bg-dark-gold rounded-full duration-500" onClick={previousReview}/>
+                <MdOutlineKeyboardArrowRight size="2.5em" className="mr-5 cursor-pointer hover:scale-150 hover:bg-dark-gold rounded-full duration-500" onClick={nextReview}/>
               </div>
             </div>
       </>

@@ -1,3 +1,5 @@
+"use client"; 
+import React, { useState } from 'react';
 import FPDisplay from '../app/Assets/Images/After.png';
 import { FaGoogle, FaInstagram, FaFacebook } from "react-icons/fa6";
 
@@ -5,7 +7,7 @@ export default function LandingPage() {
 
   const landingIcons = {
     size: "1.9em", 
-    className: "ml-1 h-full ml-0 mr-0 md:ml-5 md:mr-5 cursor-pointer",
+    className: "ml-1 h-full max-h-16 ml-0 mr-0 md:ml-5 md:mr-5 cursor-pointer rounded-2xl hover:bg-zinc-700 hover:w-20 hover:h-16 hover:p-3 duration-300",
     style: {
       color: '#FCE295', 
       minWidth: "1.8em",  // Set minimum width to 1.8em
@@ -13,8 +15,9 @@ export default function LandingPage() {
     }
   };
 
+
   const landingHeading = {
-    className: "text-4xl xl:text-5xl shorter-screen:2xl:text-5xl taller-screen:2xl:text-6xl text-center uppercase mb-3 min-w-fit whitespace-nowrap"
+    className: "cursor-default text-4xl xl:text-5xl shorter-screen:2xl:text-5xl taller-screen:2xl:text-6xl text-center uppercase mb-3 min-w-fit whitespace-nowrap duration-500"
   };
 
     return (
@@ -27,9 +30,9 @@ export default function LandingPage() {
 
                 <h1 {...landingHeading}>Your hair,</h1>
                 <h1 {...landingHeading}>our passion</h1>
-                <p className="text-base lg:text-xl text-center text-white max-w-md mt-2 ">With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.</p>
+                <p className="cursor-default text-base lg:text-xl text-center text-white max-w-md mt-2 duration-500">With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.</p>
 
-                    <div className='flex flex-row justify-evenly items-center h-10 w-full lg:w-4/5 xl:w-3/5 mt-7'>
+                    <div className='flex flex-row justify-evenly items-center h-10 w-full lg:w-4/5 mt-7'>
                     {/* {...xyz }is a spread operator. It's useful for copying components like:
                     const obj1 = { a: 1, b: 2 };
                     const obj2 = { ...obj1, c: 3 };
@@ -44,16 +47,17 @@ export default function LandingPage() {
                     // Now user is { name: 'John', age: 26 }
                     
                     */}
+
                         <a href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer">
-                        <FaGoogle {...landingIcons}/>
+                            <FaGoogle {...landingIcons}/>
                         </a>
 
                         <a href="https://www.facebook.com/HYGforesthill" target="_blank" rel="noopener noreferrer">
-                        <FaFacebook {...landingIcons}/>
+                            <FaFacebook {...landingIcons}/>
                         </a>
 
                         <a href="https://www.instagram.com/hygforesthill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
-                            <FaInstagram {...landingIcons} />
+                            <FaInstagram {...landingIcons}/>
                         </a>
                     </div>
             </div>
