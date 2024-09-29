@@ -6,7 +6,7 @@ import { FaGoogle, FaInstagram, FaFacebook } from "react-icons/fa6";
 export default function LandingPage() {
 
   const landingIcons = {
-    size: "1.9em", 
+    size: "2em", 
     className: "ml-1 h-full max-h-16 ml-0 mr-0 md:ml-5 md:mr-5 cursor-pointer rounded-2xl hover:bg-zinc-700 hover:w-20 hover:h-16 hover:p-3 duration-300",
     style: {
       color: '#FCE295', 
@@ -32,7 +32,7 @@ export default function LandingPage() {
                 <h1 {...landingHeading}>our passion</h1>
                 <p className="cursor-default text-base lg:text-xl text-center text-white max-w-md mt-2 duration-500">With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.</p>
 
-                    <div className='flex flex-row justify-evenly items-center h-10 w-full lg:w-4/5 mt-7'>
+                    <div className='flex flex-row justify-evenly items-center h-10 w-full xl:w-3/5 mt-7'>
                     {/* {...xyz }is a spread operator. It's useful for copying components like:
                     const obj1 = { a: 1, b: 2 };
                     const obj2 = { ...obj1, c: 3 };

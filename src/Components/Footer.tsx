@@ -33,7 +33,7 @@ export default function Footer() {
                 </div>
               </APIProvider>
             </div>
-            <div>
+            <div className="cursor-default">
               <h1 {...footerTitle}>OPENING HOURS:</h1>
               <p {...footerText}>Monday</p>
               <p {...footerText}>CLOSED</p>
@@ -48,7 +48,7 @@ export default function Footer() {
               <p {...footerText}>Sunday</p>
               <p {...footerText}>9.00am - 5.00pm</p>
             </div>
-            <div>
+            <div className="cursor-default">
               <h1 {...footerTitle}>CONTACT US:</h1>
               <p {...footerText}>Phone: (03) 9877 3322</p>
 
@@ -56,9 +56,9 @@ export default function Footer() {
 
               <h1 {...footerTitle}>ADDRESS:</h1>
               <p {...footerText}>40 Mahoneys Rd, Forest Hill VIC 3131</p>
-              <div className="flex flex-row mt-4 w-full h-12 rounded-2xl bg-zinc-700 drop-shadow-lg text-lighter-gold justify-center items-center cursor-pointer
-              hover:border-2 border-yellow-50">
-                <p className="mr-1">Find us on Google</p><FaArrowRight /> </div>
+              <div className=" mt-4 w-full h-12 rounded-2xl bg-zinc-700 drop-shadow-lg text-lighter-gold justify-center items-center cursor-pointer
+              hover:scale-110 duration-500">
+                <a className='h-full w-full flex flex-row justify-center items-center' href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer"><p className="mr-1">Find us on Google</p><FaArrowRight /> </a></div>
             </div>
         </div>
       </>
