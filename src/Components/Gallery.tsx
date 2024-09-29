@@ -18,12 +18,12 @@ export default function Gallery() {
   };
 
   const imageFormat = {
-    className: "object-fit drop-shadow-md",
+    className: "object-fit drop-shadow-md hover:scale-110 duration-500",
   }
 
   const galleryButtonIcons = {
-    size: "1.5em", 
-    className: "hover:scale-125 duration-500",
+    size: "2em", 
+    className: "object-contain opacity-50 scale-100 hover:opacity-100 hover:scale-125 duration-500",
   }
 
   const goldTitles = {
@@ -56,9 +56,9 @@ export default function Gallery() {
                   <img src={image1.src} alt="Gallery Image 1" {...imageFormat} />
               </div>
 
-              <button className='h-12 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[800px] 
-               bg-bg-gray rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
-               duration-500 hover:scale-110 hover:bg-lighter-gold'
+              <button className='h-14 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[800px] 
+               bg-dark-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
+               duration-500 hover:h-16 hover:bg-lighter-gold'
               onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
                 {galleryButtonHover?  
                 <>
@@ -72,7 +72,7 @@ export default function Gallery() {
 
         <div className="ml-4 lg:ml-0 flex flex-col justify-center items-center min-w-fit">
           <h2  {...goldTitles}> OUR SERVICES </h2>
-          <div className=" w-[300px] h-[475px] lg:w-[350px] lg:h-[565px] xl:h-[665px] 2xl:shorter-screen:h-[860px] 2xl:taller-screen:h-[890px] 2xl:w-[500px]
+          <div className="cursor-default w-[300px] h-[475px] lg:w-[350px] lg:h-[565px] xl:h-[665px] 2xl:shorter-screen:h-[860px] 2xl:taller-screen:h-[890px] 2xl:w-[500px]
           bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center duration-500">
           <p {...priceListBold}>Woman's</p>
               <p>Cut</p>
