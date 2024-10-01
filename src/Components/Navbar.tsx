@@ -14,8 +14,8 @@ export default function Navbar() {
       <div className="flex flex-col overflow-x-hidden">
           <motion.div 
           variants={{
-            hidden:  {opacity: 0}, 
-            show:    {opacity: 1, transition: {duration: 2,}},            
+            hidden:  {opacity: 0, y:-20}, 
+            show:    {opacity: 1, y:0, transition: {duration: 0.2, type: 'spring', bounce:0.5,}},            
           }}
           initial="hidden"
           animate="show"
@@ -41,8 +41,8 @@ export default function Navbar() {
             show: {
               opacity: 1,
               transition: {
-                delay: 0.4,
-                duration: 1,
+                delay: 0.5,
+                duration: 0.5,
               }
             }                        
           }} 

@@ -26,20 +26,54 @@ export default function LandingPage() {
         opacity: 1,
         transition: {
           delayChildren: 1.5, // Delay before starting the animation
-          staggerChildren: 0.7, // Stagger children after the delay
+          staggerChildren: 1, // Stagger children after the delay
           duration: 2,
         }
       }
   }
 
   const headingMotion = {
-    hidden: { opacity: 0, x: -100},
+    hidden: { opacity: 0, x:-10},
     show: {
       opacity: 1,
-      x:0,
+      y: 0,
       transition: {
         duration: 0.5, // Duration of the fade-in for each child
-        ease: "circIn"
+        ease: "easeInOut",
+      },
+    },
+  }
+
+  const bodyMotion = {
+    hidden: { opacity: 0},
+    show: { opacity: 1,
+      transition: {
+        duration: 1.5, // Duration of the fade-in for each child
+        ease: "easeInOut",
+      },
+    },
+  }
+
+  const iconBoxMotion = {
+    hidden: { opacity: 0},
+    show: { opacity: 1,
+      transition: {
+        delayChildren: 0.4, // Delay before starting the icon animations
+        staggerChildren: 0.5, // Stagger children after the delay
+      },
+    },
+  }
+
+  const iconMotion = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5, // Duration of the fade-in for each child
+        ease: "easeInOut",
+        type: 'spring',
+        bounce:0.5,
       },
     },
   }
@@ -67,23 +101,23 @@ export default function LandingPage() {
             </motion.h1>
 
             <motion.p className="cursor-default text-base lg:text-xl text-center text-white max-w-md mt-2 duration-500" 
-            variants={headingMotion}>
+            variants={bodyMotion}>
               With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.
             </motion.p>
 
-            <motion.div className='flex flex-row justify-evenly items-center h-10 w-full xl:w-3/5 mt-7' variants={headingMotion}>
+            <motion.div variants={iconBoxMotion} className='flex flex-row justify-evenly items-center h-10 w-full xl:w-3/5 mt-7'>
 
-              <a href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer">
+              <motion.a variants={iconMotion} href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer">
                 <FaGoogle {...landingIcons} />
-              </a>
+              </motion.a>
 
-              <a href="https://www.facebook.com/HYGforesthill" target="_blank" rel="noopener noreferrer">
+              <motion.a variants={iconMotion}  href="https://www.facebook.com/HYGforesthill" target="_blank" rel="noopener noreferrer">
                 <FaFacebook {...landingIcons} />
-              </a>
+              </motion.a>
 
-              <a href="https://www.instagram.com/hygforesthill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+              <motion.a variants={iconMotion}  href="https://www.instagram.com/hygforesthill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
                 <FaInstagram {...landingIcons} />
-              </a>
+              </motion.a>
             </motion.div>
 
           </motion.div>
@@ -97,10 +131,22 @@ export default function LandingPage() {
         xl: 1280px
         2xl: 1536px
          */}
-        <div className="w-1/2 h-fulloverflow-hidden">
+        <motion.div variants={{
+            hidden: { opacity: 0, x:50},
+            show: { opacity: 1,
+              x:0,
+              transition: {
+                delay:6.5,
+                duration:0.5,
+                ease: "easeOut",
+              },
+            },
+          }} 
+          initial="hidden"
+          animate="show"
+          className="w-1/2 h-fulloverflow-hidden">
           <img src={FPDisplay.src} className='h-full w-full object-cover object-left' />
-          {/* <img src={FPDisplay.src} className='absolute h-full scale-[1.5] right-0 top-[50px] translate-x-[250px] xl:translate-x-[100px] 2xl:-translate-x-[100px] object-cover'/> */}
-        </div>
+        </motion.div>
       </div>
     </>
   );
