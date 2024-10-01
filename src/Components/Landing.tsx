@@ -80,7 +80,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <div className="flex flex-row">
+      <div id='about-section' className="flex flex-row">
 
         <div className="flex w-1/2 h-[calc(100vh-5rem)] min-h-[600px] justify-center items-center">
 

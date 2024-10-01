@@ -11,7 +11,7 @@ export default function Navbar() {
 
     return (
       <>
-      <div className="flex flex-col overflow-x-hidden">
+      <div className="flex flex-col overflow-x-hidden fixed z-50">
           <motion.div 
           variants={{
             hidden:  {opacity: 0, y:-20}, 
@@ -29,9 +29,25 @@ export default function Navbar() {
                               w-2/3 xl:w-3/4 ">
                   <ul className="flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-36 pt-5 text-zinc-300 
                   text-md lg:shorter-screen:text-xl lg:taller-screen:text-2xl">
-                    <li {...navButtonStyle}>About</li>
-                    <li {...navButtonStyle}>Gallery & Services</li>
-                    <li {...navButtonStyle}>Contact</li>
+                    <li {...navButtonStyle} onClick={() => {
+                      const element = document.getElementById('about-section');
+                      console.log('Element:', element);  // Add this to see if it finds the element
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }}}> About</li>
+
+                    <li {...navButtonStyle} onClick={() => {
+                      const element = document.getElementById('gallery-section');
+                      console.log('Element:', element);  // Add this to see if it finds the element
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }}}>Gallery & Services</li>
+
+                    <li {...navButtonStyle} onClick={() => {
+                      const element = document.getElementById('contact-section');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }}}>Contact</li>
                   </ul>
               </div>
           </motion.div>

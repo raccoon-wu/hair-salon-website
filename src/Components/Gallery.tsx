@@ -13,6 +13,7 @@ import image8 from '../app/Assets/Images/Gallery (8).png';
 import image9 from '../app/Assets/Images/Gallery (9).png';
 
 export default function Gallery() {
+
   const priceListBold = {
     className: "font-bold text-xl",
   };
@@ -34,7 +35,7 @@ export default function Gallery() {
 
     return (
       <>
-      <div className="w-full py-16 lg:py-24 flex justify-evenly items-center bg-mid-gray px-5 xl:px-20">
+      <div id="gallery-section" className="w-full py-16 lg:py-24 flex justify-evenly items-center bg-mid-gray px-5 xl:px-20">
         
         <div className="h-full flex flex-col justify-center items-center">
           <h2 {...goldTitles}> OUR GALLERY </h2>

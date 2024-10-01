@@ -21,17 +21,17 @@ export default function Footer() {
 
     return (
       <>
-      <div className="self-center h-1.5 w-[calc(100vw-6rem)] ml-10 mr-10 bg-dark-gold"></div>
+      <div id="contact-section" className="self-center h-1.5 w-[calc(100vw-6rem)] ml-10 mr-10 bg-dark-gold"></div>
         <div className="h-[400px] flex flex-row justify-evenly items-center my-0 lg:my-4">
             <div>
               {/* ! is added as a non-null assertion operator since I'm confident that the variable will always be set in environment */}
-              {/* <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+              <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
                 <div className="h-[200px] w-[200px] xl:h-[300px] xl:w-[300px] border-4 border-yellow-50">
                   <Map defaultZoom={15} defaultCenter={salonPosition} mapId={process.env.NEXT_PUBLIC_MAP_ID}>
                     <AdvancedMarker position={salonPosition}></AdvancedMarker>
                   </Map>
                 </div>
-              </APIProvider> */}
+              </APIProvider>
             </div>
             <div className="cursor-default">
               <h1 {...footerTitle}>OPENING HOURS:</h1>
