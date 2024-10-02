@@ -17,7 +17,7 @@ export default function LandingPage() {
   };
 
   const landingHeading = {
-    className: "cursor-default text-4xl xl:text-5xl shorter-screen:2xl:text-5xl taller-screen:2xl:text-6xl text-center uppercase mb-3 min-w-fit whitespace-nowrap duration-500",
+    className: "cursor-default text-4xl xl:text-5xl text-center uppercase mb-3 min-w-fit whitespace-nowrap duration-500",
   };
 
   const landingHeadingVariant = {
@@ -80,9 +80,9 @@ export default function LandingPage() {
 
   return (
     <>
-      <div id='about-section' className="flex flex-row">
+      <div id='about-section' className="flex flex-row w-full h-full overflow-x-hidden">
 
-        <div className="flex w-1/2 h-[calc(100vh-5rem)] min-h-[600px] justify-center items-center">
+        <div className="flex w-1/2 h-screen min-h-[600px] justify-center items-center">
 
           <motion.div
             variants={landingHeadingVariant}
@@ -144,8 +144,8 @@ export default function LandingPage() {
           }} 
           initial="hidden"
           animate="show"
-          className="w-1/2 h-fulloverflow-hidden">
-          <img src={FPDisplay.src} className='h-full w-full object-cover object-left' />
+          className="w-1/2 h-full">
+          <img src={FPDisplay.src} className='h-screen min-h-[600px] w-auto object-cover object-left' />
         </motion.div>
       </div>
     </>

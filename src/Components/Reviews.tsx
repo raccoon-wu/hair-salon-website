@@ -3,8 +3,8 @@
 
 import { FaStar } from "react-icons/fa";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
-import React, { useState } from 'react';
-import ReviewBackground from '../app/Assets/Images/Comments.png';
+import React, { useEffect, useRef, useState } from 'react';
+import {motion, useInView, useAnimation} from "framer-motion";
 
 export default function Reviews() {
 
@@ -26,6 +26,21 @@ export default function Reviews() {
       reviewer:"Diane",
     },
   ];
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    once: true,
+    amount: 0.5,
+  } as any);
+
+  
+  const mainControls = useAnimation();
+
+  useEffect(()=> {
+    if (isInView){
+      mainControls.start("visible");
+    }
+  }, [isInView]);
 
     //Tracks which index to display since only one will display at a time
   const [reviewIndex, setReviewIndex] = useState(0);
@@ -57,19 +72,44 @@ export default function Reviews() {
       } else return null;
   }
 
+  const reviewComponents = {
+    variants: {
+      hidden: { opacity: 0, y:20,  },
+      visible: { opacity: 1, y:0, },
+    },
+    transition: { duration: 0.3 },
+  };
+
     return (
       <>
-        <div className="flex h-52 lg:h-48 flex-col w-full bg-[url('../app/Assets/Images/Comments.png')] bg-cover bg-center justify-center items-center m-0 duration-500">
-            <div className="flex flex-row hover:scale-125 duration-500 my-2">
+        <motion.div 
+        ref = {ref}
+        variants={{
+          hidden: {opacity: 0},
+          visible: {opacity: 1},
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 1, staggerChildren: 0.7,}}
+
+        className="flex h-52 lg:h-48 flex-col w-full bg-[url('../app/Assets/Images/Comments.png')] bg-cover bg-center justify-center items-center m-0 duration-500">
+            <motion.div variants={reviewComponents.variants} transition={reviewComponents.transition}
+              className="flex flex-row hover:scale-125 duration-500 my-2">
               {starsCount()}
-            </div>
-            <p className="z-10 text-base lg:text-xl w-3/5 m-2 text-center hover:scale-110 cursor-default duration-500">'{currentReview.review}'</p>
-            <p className="z-10 text-base lg:text-xl font-bold text-center hover:scale-110 cursor-default duration-500">- {currentReview.reviewer}</p>
-              <div className="z-0 flex flex-row absolute justify-between w-full">
+            </motion.div>
+
+              <motion.p variants={reviewComponents.variants} transition={reviewComponents.transition} 
+              className="z-10 text-base lg:text-xl w-3/5 m-2 text-center hover:scale-110 cursor-default duration-500">'{currentReview.review}'</motion.p>
+              
+              <motion.p variants={reviewComponents.variants} transition={reviewComponents.transition}
+              className="z-10 text-base lg:text-xl font-bold text-center hover:scale-110 cursor-default duration-500">- {currentReview.reviewer}</motion.p>
+              
+              <motion.div variants={reviewComponents.variants} transition={reviewComponents.transition}
+              className="z-0 flex flex-row absolute justify-between w-full">
                 <MdOutlineKeyboardArrowLeft size="2.5em" className="ml-5 cursor-pointer hover:scale-150 hover:bg-dark-gold rounded-full duration-500" onClick={previousReview}/>
                 <MdOutlineKeyboardArrowRight size="2.5em" className="mr-5 cursor-pointer hover:scale-150 hover:bg-dark-gold rounded-full duration-500" onClick={nextReview}/>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
       </>
     );
   }
