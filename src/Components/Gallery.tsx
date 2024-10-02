@@ -35,7 +35,7 @@ export default function Gallery() {
 
     return (
       <>
-      <div id="gallery-section" className="w-full py-16 lg:py-24 flex justify-evenly items-center bg-mid-gray px-5 xl:px-20">
+      <div id="gallery-section" className="w-full py-24 lg:py-32 flex justify-evenly items-center bg-mid-gray px-8 xl:px-32">
         
         <div className="h-full flex flex-col justify-center items-center">
           <h2 {...goldTitles}> OUR GALLERY </h2>
@@ -43,7 +43,7 @@ export default function Gallery() {
               w-[400px] h-[400px] gap-3
               lg:w-[500px] lg:h-[500px] lg:gap-4
               xl:w-[600px] xl:h-[600px] xl:gap-5
-              2xl:w-[800px] 2xl:h-[800px] 2xl:gap-7
+              2xl:w-[700px] 2xl:h-[700px] 2xl:gap-7
 
               ">
                   <img src={image2.src} alt="Gallery Image 2" {...imageFormat} />
@@ -57,7 +57,7 @@ export default function Gallery() {
                   <img src={image1.src} alt="Gallery Image 1" {...imageFormat} />
               </div>
 
-              <button className='h-14 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[800px] 
+              <button className='h-14 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] 
                bg-dark-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
                duration-500 hover:h-16 hover:bg-lighter-gold'
               onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
@@ -73,7 +73,7 @@ export default function Gallery() {
 
         <div className="ml-4 lg:ml-0 flex flex-col justify-center items-center min-w-fit">
           <h2  {...goldTitles}> OUR SERVICES </h2>
-          <div className="cursor-default w-[300px] h-[475px] lg:w-[350px] lg:h-[565px] xl:h-[665px] 2xl:shorter-screen:h-[860px] 2xl:taller-screen:h-[890px] 2xl:w-[500px]
+          <div className="cursor-default w-[300px] h-[475px] lg:w-[350px] lg:h-[565px] xl:h-[665px] 2xl:shorter-screen:h-[780px] 2xl:taller-screen:h-[800px] 2xl:w-[500px]
           bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center duration-500">
           <p {...priceListBold}>Woman's</p>
               <p>Cut</p>
