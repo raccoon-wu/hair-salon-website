@@ -32,23 +32,11 @@ export default function LandingPage() {
       }
   }
 
-  const headingMotion = {
-    hidden: { opacity: 0, x:-10},
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5, // Duration of the fade-in for each child
-        ease: "easeInOut",
-      },
-    },
-  }
-
   const bodyMotion = {
     hidden: { opacity: 0},
     show: { opacity: 1,
       transition: {
-        duration: 1.5, // Duration of the fade-in for each child
+        duration: 0.5, // Duration of the fade-in for each child
         ease: "easeInOut",
       },
     },
@@ -90,20 +78,19 @@ export default function LandingPage() {
             animate="show"
             className="flex flex-col w-1/2 ml-30 justify-center items-center">
 
-            <motion.h1 className={landingHeading.className} 
-            variants={headingMotion}>
-              Your hair,
-            </motion.h1>
+            <motion.div variants={bodyMotion}>
+                <motion.h1 className={landingHeading.className}>
+                  Your hair,
+                </motion.h1>
 
-            <motion.h1 className={landingHeading.className} 
-            variants={headingMotion}>
-              our passion
-            </motion.h1>
+                <motion.h1 className={landingHeading.className}>
+                  our passion
+                </motion.h1>
 
-            <motion.p className="cursor-default text-base lg:text-xl text-center text-white max-w-md mt-2 duration-500" 
-            variants={bodyMotion}>
-              With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.
-            </motion.p>
+                <motion.p className="cursor-default text-base lg:text-xl text-center text-white max-w-md mt-2 duration-500">
+                  With over 20 years of experience, our salon offers expert, personalized haircare at an affordable price. Enjoy top-quality service every time, where luxury meets your budget.
+                </motion.p>
+            </motion.div>
 
             <motion.div variants={iconBoxMotion} className='flex flex-row justify-evenly items-center h-10 w-full xl:w-3/5 mt-7'>
 
@@ -136,7 +123,7 @@ export default function LandingPage() {
             show: { opacity: 1,
               x:0,
               transition: {
-                delay:6.5,
+                delay:4.5,
                 duration:0.5,
                 ease: "easeOut",
               },

@@ -90,19 +90,20 @@ export default function Reviews() {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 1, staggerChildren: 0.7,}}
+        transition={{ duration: 1, staggerChildren: 0.5,}}
 
         className="flex h-52 lg:h-48 flex-col w-full bg-[url('../app/Assets/Images/Comments.png')] bg-cover bg-center justify-center items-center m-0 duration-500">
             <motion.div variants={reviewComponents.variants} transition={reviewComponents.transition}
-              className="flex flex-row hover:scale-125 duration-500 my-2">
+            whileHover={{ scale: 1.25 }}
+              className="flex flex-row my-2">
               {starsCount()}
             </motion.div>
 
-              <motion.p variants={reviewComponents.variants} transition={reviewComponents.transition} 
-              className="z-10 text-base lg:text-xl w-3/5 m-2 text-center hover:scale-110 cursor-default duration-500">'{currentReview.review}'</motion.p>
+              <motion.p variants={reviewComponents.variants} transition={reviewComponents.transition} whileHover={{ scale: 1.05 }}
+              className="z-10 text-base lg:text-xl w-3/5 m-2 text-center cursor-default">'{currentReview.review}'</motion.p>
               
-              <motion.p variants={reviewComponents.variants} transition={reviewComponents.transition}
-              className="z-10 text-base lg:text-xl font-bold text-center hover:scale-110 cursor-default duration-500">- {currentReview.reviewer}</motion.p>
+              <motion.p variants={reviewComponents.variants} transition={reviewComponents.transition} whileHover={{ scale: 1.05 }}
+              className="z-10 text-base lg:text-xl font-bold text-center cursor-default">- {currentReview.reviewer}</motion.p>
               
               <motion.div variants={reviewComponents.variants} transition={reviewComponents.transition}
               className="z-0 flex flex-row absolute justify-between w-full">
