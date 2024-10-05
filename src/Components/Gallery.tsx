@@ -38,7 +38,7 @@ export default function Gallery() {
   // useRef keeps track of a value/DOM element without triggering big changes in the app, it is more performant than useState.
   // why not use UseState to keep track of things? Updating useState will trigger a re-render of the entire component, whilst useRef don't cause re-renders.
 
-  const isInView = useInView(ref, {once:true, amount:0.5});
+  const isInView = useInView(ref, {once:true, amount:0.3});
   // useInView is a function from React Intersection Observer library and it checks if 'ref' is on screen, returning true or false
   // why is it not invalid during initial load when ref=useRef(null)?
   // useInView will start working as soon as a DOM element is mounted to ref, such as ref = {ref} div so now ref exists in the DOM
