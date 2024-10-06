@@ -3,7 +3,8 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/Screen_Components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/Mobile_Components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -29,6 +30,8 @@ const config: Config = {
         // adding custom height breakpoints, 'raw' key allows one to define custom in media queries outside of predefined ones such as 'sm', 'lg' etc.
         'shorter-screen': {'raw': '(max-height:950px)'},
         'taller-screen': {'raw': '(min-height:951px)'},
+        'sm-phone': '320px',
+        'md-phone': '480px',
       },
     },
   },
