@@ -13,7 +13,8 @@ const config: Config = {
         Jockey: ['JockeyOne', 'sans-serif'],
         Bellota: ['BellotaText', 'sans-serif'],
         JostR: ['JostR', 'sans-serif'],
-        JostM: ['JostM', 'sans-serif'],    
+        JostM: ['JostM', 'sans-serif'],
+        JostL: ['JostL', 'sans-serif'],    
       },
       
       colors: {
@@ -24,14 +25,15 @@ const config: Config = {
 
         'dark-gold': '#BD8E4D',
         'lighter-gold': '#FCE295',
+        'warm-gold': '#F39D3A',
       },
 
       screens:{
         // adding custom height breakpoints, 'raw' key allows one to define custom in media queries outside of predefined ones such as 'sm', 'lg' etc.
         'shorter-screen': {'raw': '(max-height:950px)'},
         'taller-screen': {'raw': '(min-height:951px)'},
-        'sm-phone': '320px',
-        'md-phone': '480px',
+        'sm-phone': {'min': '320px', 'max': '479px'},  // Between 320px and 479px
+        'md-phone': {'min': '480px', 'max': '767px'},  // Between 480px and 767px
       },
     },
   },

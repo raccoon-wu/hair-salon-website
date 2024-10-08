@@ -33,6 +33,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: 'JostL';
+  src: url('./Fonts/JostLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 :root {
   @apply font-JostR;
 
@@ -51,6 +58,7 @@ h1 {
 h2{
   @apply font-JostM;
 }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

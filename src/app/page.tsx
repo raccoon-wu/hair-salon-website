@@ -8,7 +8,7 @@ import Footer from "@/Screen_Components/Footer";
 import Gallery from "@/Screen_Components/Gallery";
 import Reviews from "@/Screen_Components/Reviews";
 
-import NavBarMobile from "@/Mobile_Components/M_Navbar"
+import M_Landing from "@/Mobile_Components/M_Landing"
 import "./globals.css";
 
 const useIsMobile = (breakpoint = 768) => {
@@ -49,7 +49,7 @@ export default function Home() {
     <>
     {isMobile ? (
         <>
-        <NavBarMobile />
+        <M_Landing/>
  
         </>):(
         <>
