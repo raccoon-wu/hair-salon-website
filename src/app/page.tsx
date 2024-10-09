@@ -9,6 +9,12 @@ import Gallery from "@/Screen_Components/Gallery";
 import Reviews from "@/Screen_Components/Reviews";
 
 import M_Landing from "@/Mobile_Components/M_Landing"
+import M_About from '@/Mobile_Components/M_About';
+import M_Footer from '@/Mobile_Components/M_Footer';
+import M_Gallery from '@/Mobile_Components/M_Gallery';
+import M_Reviews from '@/Mobile_Components/M_Reviews';
+import M_Services from '@/Mobile_Components/M_Services';
+
 import "./globals.css";
 
 const useIsMobile = (breakpoint = 768) => {
@@ -50,6 +56,11 @@ export default function Home() {
     {isMobile ? (
         <>
         <M_Landing/>
+        <M_About/>
+        <M_Reviews/>
+        <M_Gallery/>
+        <M_Services/>
+        <M_Footer/>
  
         </>):(
         <>

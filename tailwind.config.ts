@@ -19,9 +19,10 @@ const config: Config = {
       
       colors: {
         // setting up preset colors
-        'nav-dark-gray': '#1c1c1c',
+        'nav-dark-gray': '#1C1C1C',
         'mid-gray': '#2E2E2E',
-        'light-gray': 'E9E9E9',
+        'light-gray': '#E9E9E9',
+        'near-white': '#F5F5F3',
 
         'dark-gold': '#BD8E4D',
         'lighter-gold': '#FCE295',

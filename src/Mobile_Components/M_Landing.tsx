@@ -22,7 +22,7 @@ export default function NavBarMobile() {
                 </div>
                 {/* <p className="text-white text-lg">Your hair, our passion</p> */}
                 <div className="w-64 h-0.5 bg-white"></div>
-                <h1 className="mt-2 text-2xl text-white font-JostL">YOUR HAIR, OUR PASSION</h1>
+                <h3 className="mt-2 text-white">YOUR HAIR, OUR PASSION</h3>
                 <div className="flex flex-row mt-5 w-4/5 px-6 justify-evenly">
                     <a href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer">
                         <FaGoogle {...landingIcons} />
@@ -37,7 +37,7 @@ export default function NavBarMobile() {
                     </a>
                 </div>
                 <FaBars className="text-lighter-gold absolute top-8 left-8 text-3xl"/>
-                <div className="font-JostM w-40 h-10 bg-gradient-to-r from-warm-gold to-lighter-gold rounded-3xl absolute bottom-12 flex justify-center items-center">
+                <div className="font-JostM w-40 h-10 bg-gradient-to-r from-warm-gold to-lighter-gold rounded-3xl absolute bottom-10 flex justify-center items-center">
                     <p>Discover More...</p>
                 </div>
             </div>
