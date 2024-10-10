@@ -27,6 +27,12 @@ const config: Config = {
         'dark-gold': '#BD8E4D',
         'lighter-gold': '#FCE295',
         'warm-gold': '#F39D3A',
+
+        'button-light': '#D9D9D9',
+        'button-text-light': '#505050',
+        'button-dark': '#302F2F',
+        'button-text-dark': '#9C9C9C',
+
       },
 
       screens:{
@@ -35,6 +41,21 @@ const config: Config = {
         'taller-screen': {'raw': '(min-height:951px)'},
         'sm-phone': {'min': '320px', 'max': '479px'},  // Between 320px and 479px
         'md-phone': {'min': '480px', 'max': '767px'},  // Between 480px and 767px
+      },
+
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateX(-5px)',},
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        fadeOut: {
+          '0%': { opacity: '1', transform: 'translateX(0)' },
+          '100%': { opacity: '0', transform: 'translateX(-5px)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-out',
+        fadeOut: 'fadeOut 0.3s ease-out',
       },
     },
   },

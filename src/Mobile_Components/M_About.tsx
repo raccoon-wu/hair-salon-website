@@ -18,7 +18,7 @@ export default function M_About() {
 
     return (
         <>
-        <div className="flex flex-col h-[500px] justify-center items-center my-4">
+        <div className="flex flex-col h-full justify-center items-center my-10">
             <h3 className="text-white mb-5">WHY CHOOSE US?</h3>
             <div {...aboutDiv}>
                 <FiThumbsUp {...aboutIcons}/>

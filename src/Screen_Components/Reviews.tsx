@@ -5,27 +5,9 @@ import { FaStar } from "react-icons/fa";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import React, { useEffect, useRef, useState } from 'react';
 import {motion, useInView, useAnimation} from "framer-motion";
+import { googleReviews } from '../Asset_scripts/GoogleReviews';
 
 export default function Reviews() {
-
-  const googleReviews: {stars: number; review: string; reviewer: string;}[] = [
-    { stars:5,
-      review:"Amazing experience, the team were extremely accomodating, friendly, experienced and I couldn’t be happier with the result.",
-      reviewer:"Mona Zhao",
-    },
-    { stars:5,
-      review:"Showed a photo of what I wanted and got exactly that. Great hairdressers to talk to as well!",
-      reviewer:"Oliver To",
-    },
-    { stars:5,
-      review:"Mina did a great job with my hair. She understood what I required and worked well with my curls. She stayed past closing hours to get my hair done. Highly recommend for their excellent customer service and expertise!",
-      reviewer:"Prema Balasupramaniam",
-    },
-    { stars:5,
-      review:"I have been going to Mina weekly for wonderful blow wave and also have my colour . Excellent hairdresser",
-      reviewer:"Diane",
-    },
-  ];
 
   const ref = useRef(null);
   const isInView = useInView(ref, { 
