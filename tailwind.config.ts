@@ -44,18 +44,18 @@ const config: Config = {
       },
 
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0', transform: 'translateX(-5px)',},
+        slideLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-50px)',},
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
-        fadeOut: {
+        slideRight: {
           '0%': { opacity: '1', transform: 'translateX(0)' },
-          '100%': { opacity: '0', transform: 'translateX(-5px)' },
+          '100%': { opacity: '0', transform: 'translateX(-50px)' },
         },
       },
       animation: {
-        fadeIn: 'fadeIn 0.3s ease-out',
-        fadeOut: 'fadeOut 0.3s ease-out',
+        slideLeft: 'slideLeft 0.3s ease-out',
+        slideRight: 'slideRight 0.3s ease-out',
       },
     },
   },
