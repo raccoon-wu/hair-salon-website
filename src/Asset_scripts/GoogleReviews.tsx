@@ -12,7 +12,7 @@ export const googleReviews: {stars: number; review: string; reviewer: string;}[]
         reviewer:"Prema Balasupramaniam",
       },
       { stars:5,
-        review:"I have been going to Mina weekly for wonderful blow wave and also have my colour . Excellent hairdresser",
+        review:"I have been going to Mina weekly for wonderful blow wave and also have my colour. Excellent hairdresser.",
         reviewer:"Diane",
       },
     ];
