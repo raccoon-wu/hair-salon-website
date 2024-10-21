@@ -2,18 +2,32 @@
 import images from '../Asset_scripts/GalleryImages';
 import React, { useState } from "react";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 
+import { Swiper as SwiperInstance } from 'swiper'; // Import Swiper for type
+import './MSwiper.css'
 type ImageSections = keyof typeof images;
 // type = defining new type alias (creating new name for existing type/types, can be multiple existant types)
 // ImageSections = name of defined type alias
 // keyof = takes keys from object and create a union type. (e.g. if you have an object type with keys a, b, and c, keyof would produce the type "a" | "b" | "c")
 // typeof = determines the type of existing variables (e.g. const obj = { a: 1, b: 2 } would give typeof obj = { a: number; b: number; })
 
+
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
 export default function M_Gallery() {
 
     const [imageIndex, setImageIndex] = useState(0);
     const [selection, setSelection] = useState<ImageSections>('section_colour');
     const totalImages: number = images[selection].length;
+
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const nextImage = () => {
         setImageIndex((prevIndex) => (prevIndex + 1) % totalImages);
@@ -60,7 +74,34 @@ export default function M_Gallery() {
                     Perms
                 </p>
             </div>
-            <div className='w-full flex flex-row items-center m-4'>              
+
+            <Swiper 
+                style={{
+                    '--swiper-navigation-color': '#fff',
+                    "--swiper-navigation-size": "20px",
+                    
+                }}
+                className='mt-2'
+                loop={true}
+                pagination={{
+                    el: '.swiper-custom-pagination',
+                    dynamicBullets: true,
+                    }}
+                modules={[Pagination, Navigation]}
+                navigation={true}
+                >
+
+                {images[selection].map((index) => (
+                    <SwiperSlide className='w-4/5 flex justify-center items-center'>
+                        <img className='px-16' src={index.src}/>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+            <div className='mt-3 w-screen flex justify-center items-center transform-none'>
+                <div className='swiper-custom-pagination'></div>
+            </div>
+
+            {/* <div className='w-full flex flex-row items-center m-4'>              
                 <div className='w-1/5 mx-1 h-52 overflow-hidden relative'>
                     <img className='py-6 absolute h-full object-cover object-right opacity-25' src={images[selection][prevImageIndex].src}/>
                 </div>
@@ -72,10 +113,10 @@ export default function M_Gallery() {
                 </div>                       
                     <MdOutlineKeyboardArrowLeft size="2em" className="absolute text-white left-2" onClick={prevImage}/>
                     <MdOutlineKeyboardArrowRight size="2em" className="absolute text-white right-2" onClick={nextImage}/>
-            </div>
-            <div className='w-screen flex justify-center items-center'>
+            </div> */}
+            {/* <div className='w-screen flex justify-center items-center'>
                     <p className='text-sm text-button-text-dark'>{imageIndex + 1}/{totalImages}</p>  
-            </div>
+            </div> */}
 
         </div>
         </>

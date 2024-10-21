@@ -5,7 +5,8 @@ import { FaStar } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';  // Import core Swiper styles
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { Navigation, Pagination } from 'swiper/modules';
 import "../app/globals.css";
 
 export default function M_Reviews() {
@@ -43,11 +44,13 @@ export default function M_Reviews() {
                     <div className='div flex flex-row mt-1'>{starsCount()}</div>
                     <Swiper
                         pagination={{
-                        dynamicBullets: true,
-                        }}
-                        modules={[Pagination]} className="flex flex-col items-center justify-center">
+                            el: '.swiper-custom-numbers',
+                            type: 'fraction',
+                          }}
+                        loop={true}
+                        modules={[Pagination, Navigation]} className="flex flex-col items-center justify-center">
                         {googleReviews.map((reviews) => (
-                            <SwiperSlide className='h-full pb-8'>
+                            <SwiperSlide className='h-full'>
                                 <div className='h-[140px] flex flex-col justify-center items-center'>
                                     <p className='w-full'>{reviews.review}</p>
                                     <p className='font-bold mt-1'> - {reviews.reviewer}</p>
@@ -55,6 +58,7 @@ export default function M_Reviews() {
                             </SwiperSlide>
                         ))}                        
                     </Swiper>
+                    <div className='swiper-custom-numbers mb-4'></div>
                 </div>
             </div>
         </>

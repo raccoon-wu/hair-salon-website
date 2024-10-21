@@ -1,0 +1,28 @@
+.swiper-pagination-bullet.swiper-pagination-bullet-active-next{
+    background: #FCE295;
+    opacity: 0.8;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active-next-next{
+    background: #FCE295;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active-prev{
+    background: #FCE295;
+    opacity: 0.8;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active-prev-prev{
+    background: #FCE295;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: white;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    transform: none !important; 
+}
