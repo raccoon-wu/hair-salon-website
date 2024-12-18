@@ -37,7 +37,7 @@ export default function M_Reviews() {
                 <h3>see our reviews</h3>
 
                 <div className="text-sm w-40 h-10 bg-slate-900 rounded-3xl my-2 flex justify-center items-center">
-                    <p className="text-white">Find us on Google</p>
+                    <p className="text-white sm-phone:text-sm md-phone:text-lg">Find us on Google</p>
                 </div>
 
                 <div className='w-4/5 flex flex-col justify-center items-center text-center text-sm'>
@@ -48,12 +48,13 @@ export default function M_Reviews() {
                             type: 'fraction',
                           }}
                         loop={true}
-                        modules={[Pagination, Navigation]} className="flex flex-col items-center justify-center">
+                        modules={[Pagination, Navigation]} 
+                        className="flex flex-col items-center justify-center">
                         {googleReviews.map((reviews) => (
                             <SwiperSlide className='h-full'>
-                                <div className='h-[140px] flex flex-col justify-center items-center'>
-                                    <p className='w-full'>{reviews.review}</p>
-                                    <p className='font-bold mt-1'> - {reviews.reviewer}</p>
+                                <div className='h-[150px] flex flex-col justify-center items-center'>
+                                    <p className='w-full my-1'>{reviews.review}</p>
+                                    <p className='font-bold my-1'> - {reviews.reviewer}</p>
                                 </div>
                             </SwiperSlide>
                         ))}                        

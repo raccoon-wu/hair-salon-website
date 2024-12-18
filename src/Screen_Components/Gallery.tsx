@@ -2,6 +2,7 @@
 import { FaGoogle, FaInstagram, FaFacebook } from "react-icons/fa6";
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useAnimation } from "framer-motion";
+import { servicesList } from '../Asset_scripts/ServicesListData';
 
 import images from '../Asset_scripts/GalleryImages'
 
@@ -17,7 +18,7 @@ export default function Gallery() {
 
   const galleryButtonIcons = {
     size: "2em",
-    className: "object-contain text-zinc-600 scale-100 hover:text-zinc-900 hover:scale-110 duration-500",
+    className: "object-contain scale-100 hover:text-zinc-900 hover:scale-110 duration-500",
   }
 
   const goldTitles = {
@@ -76,8 +77,8 @@ export default function Gallery() {
           </div>
 
           <button className='h-14 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] 
-               bg-dark-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
-               duration-500 hover:h-16 hover:bg-lighter-gold'
+               bg-gradient-to-r from-dark-gold to-lighter-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
+               duration-500 hover:h-16 hover:bg-dark-gold'
             onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
             {galleryButtonHover ?
               <>
@@ -95,9 +96,18 @@ export default function Gallery() {
             visible: { opacity: 1, x: 0 },
           }}>
           <h2  {...goldTitles}> OUR SERVICES </h2>
-          <div className="cursor-default w-[300px] h-[475px] lg:w-[350px] lg:h-[565px] xl:h-[665px] 2xl:shorter-screen:h-[780px] 2xl:taller-screen:h-[800px] 2xl:w-[500px]
-          bg-yellow-50 rounded-3xl flex flex-col pl-8 justify-center duration-500">
-            <p {...priceListBold}>Woman's</p>
+          <div className="cursor-default w-[300px] h-[500px] lg:w-[350px] lg:h-[565px] xl:h-[685px] 2xl:shorter-screen:h-[780px] 2xl:taller-screen:h-[800px] 2xl:w-[500px]
+          bg-yellow-50 rounded-3xl flex flex-col pl-5 xl:pl-8 justify-center duration-500 lg:px-6">
+            
+            {servicesList.map((service: { sectionName: string; sectionContent: { serviceName: string }[] }) => (
+                        <div className='pl-2 pb-4' key={service.sectionName}>
+                            <p className='font-bold my-1 xl:mt-4 xl:mb-1 text-sm xl:text-base'>{service.sectionName}</p>
+                            {service.sectionContent.map((content: { serviceName: string }) => (
+                                <p className='lg:py-0.5 text-sm xl:text-base' key={content.serviceName}>{content.serviceName}</p>
+                            ))}
+                        </div>
+                    ))}
+            {/* <p {...priceListBold}>Woman's</p>
             <p>Cut</p>
             <p>Colour</p>
             <p>Perm</p>
@@ -114,7 +124,7 @@ export default function Gallery() {
             <p>Cut</p>
             <p>Colour</p>
             <p>Perm</p>
-            <br />
+            <br /> */}
           </div>
         </motion.div>
 

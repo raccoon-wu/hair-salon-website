@@ -19,7 +19,7 @@ type ImageSections = keyof typeof images;
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
+
 
 export default function M_Gallery() {
 
@@ -78,8 +78,7 @@ export default function M_Gallery() {
             <Swiper 
                 style={{
                     '--swiper-navigation-color': '#fff',
-                    "--swiper-navigation-size": "20px",
-                    
+                    "--swiper-navigation-size": "20px",                    
                 }}
                 className='mt-2'
                 loop={true}
