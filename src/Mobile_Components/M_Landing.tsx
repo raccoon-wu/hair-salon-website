@@ -1,6 +1,6 @@
 import { RiScissorsFill } from "react-icons/ri";
 import { FaGoogle, FaInstagram, FaFacebook, FaBars } from "react-icons/fa6";
-import mobile_bg from "../app/Assets/Images/Mobile_bg.png";
+import { useState } from "react";
 
 export default function NavBarMobile() {
     const landingIcons = {
@@ -9,6 +9,16 @@ export default function NavBarMobile() {
           color: '#FCE295', 
         },
       };
+
+    const [discoverClicked, setDiscoverClicked] = useState(false);
+
+    const handleDiscoverClick = () => {
+        setDiscoverClicked(true);
+
+        setTimeout(() => {
+            setDiscoverClicked(false);
+        }, 500);
+    }
     
     return (
         <>
@@ -33,9 +43,20 @@ export default function NavBarMobile() {
                         <FaInstagram {...landingIcons} />
                     </a>
                 </div>
-                <FaBars className="text-lighter-gold absolute top-6 left-6 md-phone:top-8 md-phone:left-8 text-3xl"/>
-                <div className="font-JostM w-40 h-10 md-phone:h-12 md-phone:w-44 mb-1 md-phone:mb-2 bg-gradient-to-r from-warm-gold to-lighter-gold rounded-3xl absolute bottom-10 flex justify-center items-center">
-                    <p className="sm-phone:text-sm md-phone:text-lg">Discover More...</p>
+                <FaBars className={`text-lighter-gold absolute top-6 left-6 md-phone:top-8 md-phone:left-8 text-3xl cursor-pointer
+                            ${discoverClicked ? 'animate-scale' : ''}`}/>
+                <div className=" absolute bottom-10 flex justify-center items-center">
+                    <p 
+                    onClick={() => {
+                        handleDiscoverClick();
+                        const element = document.getElementById("m-about-section");
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }}}
+                        className={`text-sm cursor-pointer font-JostM px-6 py-3 md-phone:h-12 md-phone:w-44 mb-1 md-phone:mb-2 
+                            bg-gradient-to-r from-warm-gold to-lighter-gold rounded-3xl text-center
+                            ${discoverClicked ? 'animate-scale' : ''}`}
+                    >Discover More...</p>
                 </div>
             </div>
         </>

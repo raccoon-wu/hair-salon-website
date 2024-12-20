@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -44,18 +45,36 @@ const config: Config = {
       },
 
       keyframes: {
-        slideLeft: {
-          '0%': { opacity: '0', transform: 'translateX(-50px)',},
-          '100%': { opacity: '1', transform: 'translateX(0)' },
+        buttonScaleUpDown: {
+          '0%': {
+            transform: 'scale(1)',
+          },
+          '25%': {
+            transform: 'scale(0.9)',
+          },
+          '100%': {
+            transform: 'scale(1)',
+          },
         },
-        slideRight: {
-          '0%': { opacity: '1', transform: 'translateX(0)' },
-          '100%': { opacity: '0', transform: 'translateX(-50px)' },
+
+        buttonPopIn: {
+          '0%': {
+            transform: 'scale(0)',
+            opacity: '0',
+          },
+          '60%': {
+            transform: 'scale(1.2)',
+          },
+
+          '100%': {
+            transform: 'scale(1)',
+            opacity: '1',
+          },
         },
       },
       animation: {
-        slideLeft: 'slideLeft 0.3s ease-out',
-        slideRight: 'slideRight 0.3s ease-out',
+        scale: 'buttonScaleUpDown 0.5s ease-in-out',
+        popIn: 'buttonPopIn 0.3s ease-out'
       },
     },
   },

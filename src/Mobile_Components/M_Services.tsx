@@ -8,7 +8,7 @@ export default function M_Services() {
 
     return (
         <>
-            <div className="py-8 h-full w-screen bg-button-dark flex flex-col justify-center items-center">
+            <div  id="m-service-section" className="py-8 h-full w-screen bg-button-dark flex flex-col justify-center items-center">
                 <h3 className="text-white">our services</h3>
                 <div className="mt-2 w-4/5 md-phone:w-3/5 h-full bg-near-white rounded-lg text-sm p-5">
                     <div className='flex flex-col items-center'>

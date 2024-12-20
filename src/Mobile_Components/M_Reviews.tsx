@@ -33,7 +33,7 @@ export default function M_Reviews() {
 
     return (
         <>
-            <div className="bg-near-white w-screen h-full flex flex-col justify-center items-center pt-8 py-3">
+            <div id="m-review-section" className="bg-near-white w-screen h-full flex flex-col justify-center items-center pt-8 py-3">
                 <h3>see our reviews</h3>
 
                 <div className="text-sm w-40 h-10 bg-slate-900 rounded-3xl my-2 flex justify-center items-center">

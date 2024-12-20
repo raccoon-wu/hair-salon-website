@@ -14,7 +14,7 @@ import M_Footer from '@/Mobile_Components/M_Footer';
 import M_Gallery from '@/Mobile_Components/M_Gallery';
 import M_Reviews from '@/Mobile_Components/M_Reviews';
 import M_Services from '@/Mobile_Components/M_Services';
-
+import M_OptionBar from '@/Mobile_Components/M_OptionBar';
 import "./globals.css";
 
 const useIsMobile = (breakpoint = 768) => {
@@ -56,6 +56,7 @@ export default function Home() {
     {isMobile ? (
         <>
         <M_Landing/>
+        <M_OptionBar/>
         <M_About/>
         <M_Reviews/>
         <M_Gallery/>

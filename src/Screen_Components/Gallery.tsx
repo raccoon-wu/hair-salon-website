@@ -18,12 +18,8 @@ export default function Gallery() {
 
   const galleryButtonIcons = {
     size: "2em",
-    className: "object-contain scale-100 hover:text-zinc-900 hover:scale-110 duration-500",
+    className: "object-contain scale-100 text-near-white hover:text-lighter-gold hover:scale-110 duration-500",
   }
-
-  const goldTitles = {
-    className: "cursor-default text-3xl lg:text-4xl 2xl:shorter-screen:text-4xl 2xl:taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"
-  };
 
   const [galleryButtonHover, setgalleryButtonHover] = useState(false);
 
@@ -63,7 +59,7 @@ export default function Gallery() {
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
           }}>
-          <h2 {...goldTitles}> OUR GALLERY </h2>
+          <h2 className="cursor-default text-3xl lg:text-4xl 2xl:shorter-screen:text-4xl 2xl:taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent mb-5"> OUR GALLERY </h2>
           <div className="grid grid-cols-3 duration-500
               w-[400px] h-[400px] gap-3
               lg:w-[500px] lg:h-[500px] lg:gap-4
@@ -77,8 +73,8 @@ export default function Gallery() {
           </div>
 
           <button className='h-14 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] 
-               bg-gradient-to-r from-dark-gold to-lighter-gold rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
-               duration-500 hover:h-16 hover:bg-dark-gold'
+               bg-zinc-400 rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
+               duration-500 hover:h-16 hover:bg-zinc-500'
             onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
             {galleryButtonHover ?
               <>
@@ -95,12 +91,13 @@ export default function Gallery() {
             hidden: { opacity: 0, x: 50 },
             visible: { opacity: 1, x: 0 },
           }}>
-          <h2  {...goldTitles}> OUR SERVICES </h2>
+          <h2 className="cursor-default text-3xl lg:text-4xl 2xl:shorter-screen:text-4xl 2xl:taller-screen:text-5xl font-bold bg-gradient-to-r from-dark-gold to-lighter-gold bg-clip-text text-transparent"> OUR SERVICES </h2>
+          <p className="text-zinc-400 mb-5"> *Contact or visit us in-store for a free quote! </p>
           <div className="cursor-default w-[300px] h-[500px] lg:w-[350px] lg:h-[565px] xl:h-[685px] 2xl:shorter-screen:h-[780px] 2xl:taller-screen:h-[800px] 2xl:w-[500px]
-          bg-yellow-50 rounded-3xl flex flex-col pl-5 xl:pl-8 justify-center duration-500 lg:px-6">
+          bg-yellow-50 rounded-3xl flex flex-col pl-5 xl:pl-8 justify-center duration-500 pt-2 lg:py-4">
             
             {servicesList.map((service: { sectionName: string; sectionContent: { serviceName: string }[] }) => (
-                        <div className='pl-2 pb-4' key={service.sectionName}>
+                        <div className='pl-2 pb-3 lg:pb-4' key={service.sectionName}>
                             <p className='font-bold my-1 xl:mt-4 xl:mb-1 text-sm xl:text-base'>{service.sectionName}</p>
                             {service.sectionContent.map((content: { serviceName: string }) => (
                                 <p className='lg:py-0.5 text-sm xl:text-base' key={content.serviceName}>{content.serviceName}</p>
@@ -126,9 +123,11 @@ export default function Gallery() {
             <p>Perm</p>
             <br /> */}
           </div>
+
         </motion.div>
 
       </motion.div>
+      
     </>
   );
 }
