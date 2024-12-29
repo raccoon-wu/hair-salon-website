@@ -50,7 +50,7 @@ const config: Config = {
             transform: 'scale(1)',
           },
           '25%': {
-            transform: 'scale(2)',
+            transform: 'scale(0.8)',
           },
           '100%': {
             transform: 'scale(1)',

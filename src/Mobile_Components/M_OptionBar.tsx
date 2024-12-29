@@ -1,60 +1,81 @@
 import { FaBars } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 
-export default function OptionBars() {
-  const screenFactor = 400;
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [hasScrolledPastThreshold, setHasScrolledPastThreshold] = useState(false);
-  const [barClicked, setBarClicked] = useState(false);
+export default function optionBars () {
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
-      setScrollPosition(currentScroll);
+    const screenFactor = 400;
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [showOverlay, setShowOverlay] = useState(false);
 
-      // Check if we've scrolled past the threshold
-      const threshold = window.innerHeight - screenFactor;
-      if (currentScroll >= threshold && !hasScrolledPastThreshold) {
-        setHasScrolledPastThreshold(true);
-      } else if (currentScroll < threshold && hasScrolledPastThreshold) {
-        setHasScrolledPastThreshold(false);
-      }
+    const overlayButton = {
+        className: "bg-gradient-to-r from-warm-gold to-lighter-gold h-12 w-36 rounded-full m-1.5 animate-popIn font-JostM text-sm cursor-pointer ",
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [hasScrolledPastThreshold]);
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };    
 
-  const getBarsPosition = () => {
-    const threshold = window.innerHeight - screenFactor;
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
-    if (scrollPosition < threshold) {
-      return "absolute top-6 md-phone:top-8";
-    } else {
-      return `fixed bottom-12 rounded-full bg-zinc-600 h-12 w-12 z-50 ${
-        hasScrolledPastThreshold ? "animate-popIn" : ""
-      }`;
+    const getBarsPosition = () => {
+        if (scrollPosition < window.innerHeight-screenFactor)
+        {       if(showOverlay === true){
+                    return ' bg-zinc-600 h-12 w-12 absolute top-4 md-phone:top-6 rounded-full z-50 left-4 md-phone:left-6 '
+                }
+                return ' absolute top-6 md-phone:top-8 z-50 left-6 md-phone:left-8';
+
+        } else if (scrollPosition >= window.innerHeight-screenFactor){
+                if(showOverlay === true){
+                    return ' fixed bottom-12 rounded-full bg-zinc-600 h-12 w-12 left-6 md-phone:left-8 z-50 '
+                }
+                return ' fixed bottom-12 rounded-full bg-zinc-600 h-12 w-12 z-50 animate-scale left-6 md-phone:left-8 ';
+
+        }
     }
-  };
 
-  const handleBarClick = () => {
-    setBarClicked(true);
+    const [barClicked, setBarClicked] = useState(false);
+    
+    const handleBarClick = () => {
+        setBarClicked(true);
+        setShowOverlay(!showOverlay);
 
-    setTimeout(() => {
-      setBarClicked(false);
-    }, 500);
-  };
+        setTimeout(() => {
+            setBarClicked(false);
+        }, 300);
+    }
 
-  return (
-    <div
-      className={`${getBarsPosition()} cursor-pointer left-6 md-phone:left-8 flex justify-center items-center ${
-        barClicked ? "animate-scale" : ""
-      }`}
-      onClick={handleBarClick}
-    >
-      <FaBars className="text-lighter-gold text-3xl" />
-    </div>
-  );
+    const closeOverlay = () => {
+        setShowOverlay(false);
+    }
+
+    return (
+        <>
+            <div className={` ${getBarsPosition() } cursor-pointer flex justify-center items-center`}
+            >
+                <FaBars className='text-lighter-gold text-3xl'
+                onClick={handleBarClick}/>
+            </div>
+            {showOverlay && 
+            (<>
+                <div className="fixed top-0 left-0 bg-black bg-opacity-90
+                h-screen w-screen py-4 z-40 "
+                onClick={closeOverlay}>
+                    <div className=" fixed bottom-28 left-1/2 transform -translate-x-1/2 bg-red-50 flex flex-col ">
+                        <button {...overlayButton}>About</button>
+                        <button {...overlayButton}>Gallery</button>
+                        <button {...overlayButton}>Services</button>
+                        <button {...overlayButton}>Contact</button>
+                    </div>
+                </div>
+
+            </>)
+            }
+        </>
+
+    );
 }
