@@ -37,7 +37,9 @@ export default function M_Reviews() {
                 <h3>see our reviews</h3>
 
                 <div className="text-sm w-40 h-10 bg-slate-900 rounded-3xl my-2 flex justify-center items-center">
-                    <p className="text-white sm-phone:text-sm md-phone:text-lg">Find us on Google</p>
+                    <a href="https://g.co/kgs/i3gjw9z">
+                        <p className="text-white sm-phone:text-sm md-phone:text-lg">Find us on Google</p>
+                    </a>
                 </div>
 
                 <div className='w-4/5 flex flex-col justify-center items-center text-center text-sm'>

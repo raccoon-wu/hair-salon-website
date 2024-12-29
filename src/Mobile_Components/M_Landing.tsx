@@ -1,5 +1,5 @@
 import { RiScissorsFill } from "react-icons/ri";
-import { FaGoogle, FaInstagram, FaFacebook, FaBars } from "react-icons/fa6";
+import { FaGoogle, FaInstagram, FaFacebook } from "react-icons/fa6";
 import { useState } from "react";
 
 export default function NavBarMobile() {
@@ -11,7 +11,6 @@ export default function NavBarMobile() {
       };
 
     const [discoverClicked, setDiscoverClicked] = useState(false);
-
     const handleDiscoverClick = () => {
         setDiscoverClicked(true);
 
@@ -19,7 +18,7 @@ export default function NavBarMobile() {
             setDiscoverClicked(false);
         }, 500);
     }
-    
+
     return (
         <>
             <div className="flex flex-col w-screen h-screen bg-[url('../app/Assets/Images/Mobile_bg.png')] bg-cover bg-center justify-center items-center">
@@ -43,8 +42,7 @@ export default function NavBarMobile() {
                         <FaInstagram {...landingIcons} />
                     </a>
                 </div>
-                <FaBars className={`text-lighter-gold absolute top-6 left-6 md-phone:top-8 md-phone:left-8 text-3xl cursor-pointer
-                            ${discoverClicked ? 'animate-scale' : ''}`}/>
+
                 <div className=" absolute bottom-10 flex justify-center items-center">
                     <p 
                     onClick={() => {

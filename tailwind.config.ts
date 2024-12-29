@@ -63,7 +63,7 @@ const config: Config = {
             opacity: '0',
           },
           '60%': {
-            transform: 'scale(1.2)',
+            transform: 'scale(1.05)',
           },
 
           '100%': {

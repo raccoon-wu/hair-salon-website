@@ -9,7 +9,7 @@ export default function M_Footer() {
 
     return (
         <>
-        <div className="my-12 flex flex-col justify-center items-center">
+        <div id="m-contact-section" className="my-12 flex flex-col justify-center items-center">
               <h1 {...footerTitle}>OPENING HOURS:</h1>
               <p {...footerText}>Monday</p>
               <p {...footerText}>CLOSED</p>

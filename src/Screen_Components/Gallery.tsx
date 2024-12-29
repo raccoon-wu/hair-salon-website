@@ -104,24 +104,6 @@ export default function Gallery() {
                             ))}
                         </div>
                     ))}
-            {/* <p {...priceListBold}>Woman's</p>
-            <p>Cut</p>
-            <p>Colour</p>
-            <p>Perm</p>
-            <br />
-
-
-            <p {...priceListBold}>Men's </p>
-            <p>Cut</p>
-            <p>Colour</p>
-            <p>Perm</p>
-            <br />
-
-            <p {...priceListBold}>Children's</p>
-            <p>Cut</p>
-            <p>Colour</p>
-            <p>Perm</p>
-            <br /> */}
           </div>
 
         </motion.div>

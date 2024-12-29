@@ -31,14 +31,12 @@ export default function Navbar() {
                   text-xl xl:shorter-screen:text-xl xl:taller-screen:text-2xl">
                     <li {...navButtonStyle} onClick={() => {
                       const element = document.getElementById('about-section');
-                      console.log('Element:', element);  // Add this to see if it finds the element
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }}}> About</li>
 
                     <li {...navButtonStyle} onClick={() => {
                       const element = document.getElementById('gallery-section');
-                      console.log('Element:', element);  // Add this to see if it finds the element
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }}}>Gallery & Services</li>
