@@ -50,7 +50,7 @@ const config: Config = {
             transform: 'scale(1)',
           },
           '25%': {
-            transform: 'scale(0.8)',
+            transform: 'scale(0.9)',
           },
           '100%': {
             transform: 'scale(1)',
@@ -73,7 +73,7 @@ const config: Config = {
         },
       },
       animation: {
-        scale: 'buttonScaleUpDown 0.5s ease-in-out',
+        scale: 'buttonScaleUpDown 0.3s ease-in-out',
         popIn: 'buttonPopIn 0.3s ease-out'
       },
     },

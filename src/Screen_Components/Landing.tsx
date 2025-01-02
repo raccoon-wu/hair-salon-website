@@ -25,7 +25,7 @@ export default function LandingPage() {
       show: {
         opacity: 1,
         transition: {
-          delayChildren: 1.5, // Delay before starting the animation
+          delayChildren: 1.3, // Delay before starting the animation
           staggerChildren: 1, // Stagger children after the delay
           duration: 2,
         }
@@ -33,35 +33,28 @@ export default function LandingPage() {
   }
 
   const bodyMotion = {
-    hidden: { opacity: 0},
-    show: { opacity: 1,
+    hidden: { opacity: 0, y: 15 },
+    show: { opacity: 1, y:0,
       transition: {
-        duration: 0.5, // Duration of the fade-in for each child
+        duration: 0.6, // Duration of the fade-in for each child
         ease: "easeInOut",
-      },
-    },
-  }
-
-  const iconBoxMotion = {
-    hidden: { opacity: 0},
-    show: { opacity: 1,
-      transition: {
-        delayChildren: 0.4, // Delay before starting the icon animations
-        staggerChildren: 0.5, // Stagger children after the delay
+        type: 'spring',
+        bounce:0.4,
+        
       },
     },
   }
 
   const iconMotion = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 15 },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5, // Duration of the fade-in for each child
+        duration: 0.6, // Duration of the fade-in for each child
         ease: "easeInOut",
         type: 'spring',
-        bounce:0.5,
+        bounce:0.4,
       },
     },
   }
@@ -92,19 +85,19 @@ export default function LandingPage() {
                 </motion.p>
             </motion.div>
 
-            <motion.div variants={iconBoxMotion} className='flex flex-row justify-evenly items-center h-10 w-full xl:w-3/5 mt-7'>
+            <motion.div variants={iconMotion} className='flex flex-row justify-evenly items-center h-10 w-full xl:w-3/5 mt-7'>
 
-              <motion.a variants={iconMotion} href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer">
+              <a href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer">
                 <FaGoogle {...landingIcons} />
-              </motion.a>
+              </a>
 
-              <motion.a variants={iconMotion}  href="https://www.facebook.com/HYGforesthill" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/HYGforesthill" target="_blank" rel="noopener noreferrer">
                 <FaFacebook {...landingIcons} />
-              </motion.a>
+              </a>
 
-              <motion.a variants={iconMotion}  href="https://www.instagram.com/hygforesthill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/hygforesthill?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
                 <FaInstagram {...landingIcons} />
-              </motion.a>
+              </a>
             </motion.div>
 
           </motion.div>
@@ -123,7 +116,7 @@ export default function LandingPage() {
             show: { opacity: 1,
               x:0,
               transition: {
-                delay:4.5,
+                delay:3.2,
                 duration:0.5,
                 ease: "easeOut",
               },

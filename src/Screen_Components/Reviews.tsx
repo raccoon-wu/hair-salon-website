@@ -54,43 +54,42 @@ export default function Reviews() {
       } else return null;
   }
 
-  const reviewComponents = {
-    variants: {
-      hidden: { opacity: 0, y:20,  },
-      visible: { opacity: 1, y:0, },
-    },
-    transition: { duration: 0.3 },
-  };
-
     return (
       <>
         <motion.div 
         ref = {ref}
         variants={{
-          hidden: {opacity: 0},
-          visible: {opacity: 1},
+          hidden: {opacity: 0, },
+          visible: {opacity: 1, },
         }}
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 1, staggerChildren: 0.5,}}
 
         className="flex h-52 lg:h-48 flex-col w-full bg-[url('../app/Assets/Images/Comments.png')] bg-cover bg-center justify-center items-center m-0 duration-500">
-            <motion.div variants={reviewComponents.variants} transition={reviewComponents.transition}
-            whileHover={{ scale: 1.25 }}
-              className="flex flex-row my-2">
-              {starsCount()}
-            </motion.div>
+              <motion.div
+                  variants={{
+                    hidden: { opacity:0, y: 15, },
+                    visible: { opacity:1, y: 0, }
+                  }}
+                  initial="hidden"
+                  animate={mainControls}
+                  transition={{ duration: 0.4 }}
+        className="flex h-full w-full flex-col justify-center items-center">
 
-              <motion.p variants={reviewComponents.variants} transition={reviewComponents.transition} whileHover={{ scale: 1.05 }}
-              className="z-10 text-base lg:text-xl w-3/5 m-2 text-center cursor-default">'{currentReview.review}'</motion.p>
-              
-              <motion.p variants={reviewComponents.variants} transition={reviewComponents.transition} whileHover={{ scale: 1.05 }}
-              className="z-10 text-base lg:text-xl font-bold text-center cursor-default">- {currentReview.reviewer}</motion.p>
-              
-              <motion.div variants={reviewComponents.variants} transition={reviewComponents.transition}
-              className="z-0 flex flex-row absolute justify-between w-full">
-                <MdOutlineKeyboardArrowLeft size="2.5em" className="ml-5 cursor-pointer hover:scale-150 hover:bg-dark-gold rounded-full duration-500" onClick={previousReview}/>
-                <MdOutlineKeyboardArrowRight size="2.5em" className="mr-5 cursor-pointer hover:scale-150 hover:bg-dark-gold rounded-full duration-500" onClick={nextReview}/>
+                <div className="flex flex-row my-2">
+                  {starsCount()}
+                </div>
+
+                <p className="z-10 text-base lg:text-xl w-3/5 m-2 text-center cursor-default">'{currentReview.review}'</p>
+                
+                <p className="z-10 text-base lg:text-xl font-bold text-center cursor-default">- {currentReview.reviewer}</p>
+                
+                <div
+                className="z-0 flex flex-row absolute justify-between w-full">
+                  <MdOutlineKeyboardArrowLeft size="2.5em" className="ml-5 cursor-pointer hover:scale-150 hover:bg-dark-gold rounded-full duration-500" onClick={previousReview}/>
+                  <MdOutlineKeyboardArrowRight size="2.5em" className="mr-5 cursor-pointer hover:scale-150 hover:bg-dark-gold rounded-full duration-500" onClick={nextReview}/>
+                </div>
               </motion.div>
             </motion.div>
       </>

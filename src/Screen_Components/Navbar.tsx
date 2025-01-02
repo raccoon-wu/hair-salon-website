@@ -1,13 +1,16 @@
 "use client"; 
 import "../app/globals.css";
 import { RiScissorsFill } from "react-icons/ri";
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
 
-  const navButtonStyle = {
-    className: "cursor-pointer min-w-fit font-xl hover:underline hover:scale-110 hover:text-white decoration-2 underline-offset-8 duration-300",
-  };
+  const [aboutClicked, setAboutClicked] = useState(false);
+  const [galleryClicked, setGalleryClicked] = useState(false);
+  const [contactClicked, setContactClicked] = useState(false);
+
+  const navButtonStyle = 'cursor-pointer min-w-fit font-xl hover:underline hover:scale-110 hover:text-white decoration-2 underline-offset-8 duration-300';
 
     return (
       <>
@@ -15,7 +18,7 @@ export default function Navbar() {
           <motion.div 
           variants={{
             hidden:  {opacity: 0, y:-20}, 
-            show:    {opacity: 1, y:0, transition: {duration: 0.2, type: 'spring', bounce:0.5,}},            
+            show:    {opacity: 1, y:0, transition: {duration: 0.2, type: 'spring', bounce:0.4,}},            
           }}
           initial="hidden"
           animate="show"
@@ -29,19 +32,32 @@ export default function Navbar() {
                               w-2/3 xl:w-3/4 ">
                   <ul className="flex flex-row justify-end space-x-10 md:space-x-20 lg:space-x-30 xl:space-x-36 pt-5 text-zinc-300 
                   text-xl xl:shorter-screen:text-xl xl:taller-screen:text-2xl">
-                    <li {...navButtonStyle} onClick={() => {
+
+                    <li className={` ${ aboutClicked ? ' animate-scale ' : ' ' } ${navButtonStyle} `} onClick={() => {
+                          setAboutClicked(true);
+                          setTimeout(() => {
+                            setAboutClicked(false);
+                          }, 300);
                       const element = document.getElementById('about-section');
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }}}> About</li>
 
-                    <li {...navButtonStyle} onClick={() => {
+                    <li className={` ${ galleryClicked ? ' animate-scale ' : ' ' } ${navButtonStyle} `} onClick={() => {
+                          setGalleryClicked(true);
+                          setTimeout(() => {
+                            setGalleryClicked(false);
+                          }, 300);
                       const element = document.getElementById('gallery-section');
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }}}>Gallery & Services</li>
 
-                    <li {...navButtonStyle} onClick={() => {
+                    <li className={` ${ contactClicked ? ' animate-scale ' : ' ' } ${navButtonStyle} `}  onClick={() => {
+                          setContactClicked(true);
+                          setTimeout(() => {
+                            setContactClicked(false);
+                          }, 300);
                       const element = document.getElementById('contact-section');
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });

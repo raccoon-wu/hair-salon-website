@@ -18,7 +18,7 @@ export default function Gallery() {
 
   const galleryButtonIcons = {
     size: "2em",
-    className: "object-contain scale-100 text-near-white hover:text-lighter-gold hover:scale-110 duration-500",
+    className: "object-contain scale-100 text-black hover:text-zinc-700 hover:scale-110 duration-300 ",
   }
 
   const [galleryButtonHover, setgalleryButtonHover] = useState(false);
@@ -72,9 +72,9 @@ export default function Gallery() {
             ))}
           </div>
 
-          <button className='h-14 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] 
-               bg-zinc-400 rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
-               duration-500 hover:h-16 hover:bg-zinc-500'
+          <button className='h-14 w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] text-black
+                bg-gradient-to-r from-dark-gold to-lighter-gold hover:bg-black rounded-xl shorter-screen:mt-5 taller-screen:mt-6 text-base xl:text-lg flex flex-row justify-evenly items-center px-24
+               duration-500 hover:h-16 '
             onMouseEnter={() => setgalleryButtonHover(true)} onMouseLeave={() => setgalleryButtonHover(false)}>
             {galleryButtonHover ?
               <>
