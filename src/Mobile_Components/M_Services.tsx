@@ -12,7 +12,7 @@ export default function M_Services() {
                 <h3 className="text-white">our services</h3>
                 <div className="mt-2 w-4/5 md-phone:w-3/5 h-full bg-near-white rounded-lg text-sm p-5">
                     <div className='flex flex-col items-center'>
-                        <p className='w-3/5 text-zinc-700 text-sm'> *Contact or visit us in-store for a free quote! </p>
+                        <p className='w-4/5 text-zinc-700 text-sm text-center'> *Contact or visit us in-store for a free quote! </p>
                     </div>
                     {servicesList.map((service: { sectionName: string; sectionContent: { serviceName: string }[] }) => (
                         <div className='pl-2 pb-4' key={service.sectionName}>

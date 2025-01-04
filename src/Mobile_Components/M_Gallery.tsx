@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import './MSwiper.css'
+
 type ImageSections = keyof typeof images;
 // type = defining new type alias (creating new name for existing type/types, can be multiple existant types)
 // ImageSections = name of defined type alias
@@ -62,18 +63,18 @@ export default function M_Gallery() {
             </div>
 
             <Swiper 
-                style={{
-                    '--swiper-navigation-color': '#fff',
-                    "--swiper-navigation-size": "20px",                    
-                }}
                 className='mt-2'
                 loop={true}
                 pagination={{
                     el: '.swiper-custom-pagination',
-                    dynamicBullets: true,
+                    type: 'fraction',
                     }}
                 modules={[Pagination, Navigation]}
                 navigation={true}
+                style={{
+                    '--swiper-navigation-size': '20px',
+                    '--swiper-navigation-color': 'white',
+                }}
                 >
 
                 {images[selection].map((index) => (
@@ -82,8 +83,10 @@ export default function M_Gallery() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div className='mt-3 w-screen flex justify-center items-center transform-none'>
-                <div className='swiper-custom-pagination'></div>
+            <div className='mt-3 w-screen flex justify-center items-center text-white font-JostR'>
+                <div>
+                    <div className='swiper-custom-pagination'></div>
+                </div>
             </div>
         </div>
         </>
