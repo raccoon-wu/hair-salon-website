@@ -41,7 +41,7 @@ export default function Footer() {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 1, staggerChildren: 1,}}
+        transition={{ duration: 1, staggerChildren: 0.5,}}
         className="h-[400px] flex flex-row justify-evenly items-center my-0 lg:my-4">
             {/* <motion.div variants={{
           hidden: {opacity: 0, y:10},
@@ -56,8 +56,8 @@ export default function Footer() {
               </APIProvider>
             </motion.div> */}
             <motion.div variants={{
-          hidden: {opacity: 0, y:10},
-          visible: {opacity: 1, y:0},
+          hidden: {opacity: 0, x:-10},
+          visible: {opacity: 1, x:0},
         }} className="cursor-default">
               <h1 {...footerTitle}>OPENING HOURS:</h1>
               <p {...footerText}>Monday</p>
@@ -74,8 +74,8 @@ export default function Footer() {
               <p {...footerText}>9.00am - 5.00pm</p>
             </motion.div>
             <motion.div variants={{
-          hidden: {opacity: 0, y:10},
-          visible: {opacity: 1, y:0},
+          hidden: {opacity: 0, x:10},
+          visible: {opacity: 1, x:0},
         }} className="cursor-default">
               <h1 {...footerTitle}>CONTACT US:</h1>
               <p {...footerText}>Phone: (03) 9877 3322</p>

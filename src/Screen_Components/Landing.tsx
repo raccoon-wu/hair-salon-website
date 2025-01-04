@@ -25,7 +25,7 @@ export default function LandingPage() {
       show: {
         opacity: 1,
         transition: {
-          delayChildren: 1.3, // Delay before starting the animation
+          delayChildren: 1.2, // Delay before starting the animation
           staggerChildren: 1, // Stagger children after the delay
           duration: 2,
         }

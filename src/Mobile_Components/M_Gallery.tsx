@@ -1,11 +1,8 @@
 "use client";
 import images from '../Asset_scripts/GalleryImages';
 import React, { useState } from "react";
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-
-import { Swiper as SwiperInstance } from 'swiper'; // Import Swiper for type
 import './MSwiper.css'
 type ImageSections = keyof typeof images;
 // type = defining new type alias (creating new name for existing type/types, can be multiple existant types)

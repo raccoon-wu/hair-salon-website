@@ -64,7 +64,7 @@ export default function Reviews() {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 1, staggerChildren: 0.5,}}
+        transition={{ duration: 0.3, staggerChildren: 0.5, ease: "easeOut",}}
 
         className="flex h-52 lg:h-48 flex-col w-full bg-[url('../app/Assets/Images/Comments.png')] bg-cover bg-center justify-center items-center m-0 duration-500">
               <motion.div
@@ -74,7 +74,7 @@ export default function Reviews() {
                   }}
                   initial="hidden"
                   animate={mainControls}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
         className="flex h-full w-full flex-col justify-center items-center">
 
                 <div className="flex flex-row my-2">
