@@ -8,7 +8,7 @@ export default function optionBars () {
     const [showOverlay, setShowOverlay] = useState(false);
 
     const overlayButton = {
-        className: "bg-gradient-to-r from-warm-gold to-lighter-gold h-12 w-36 rounded-full m-1.5 animate-popIn font-JostM text-sm cursor-pointer ",
+        className: "bg-gradient-to-r from-warm-gold to-lighter-gold h-12 w-36 md-phone:h-16 md-phone:w-48 md-phone:text-lg rounded-full m-1.5 animate-popIn font-JostM text-sm cursor-pointer ",
     };
 
     // Event that listens for user scroll and updates the useState
@@ -35,21 +35,21 @@ export default function optionBars () {
         if (isScrolled) {
             if (showOverlay) {
                 // overlayed bottom state
-                barsClassname = ' fixed bottom-12 rounded-full bg-zinc-600 h-12 w-12 left-6 md-phone:left-8 z-50 animate-scale ';
+                barsClassname = ' fixed bottom-12 rounded-full bg-zinc-600 h-12 w-12 md-phone:h-16 md-phone:w-16 left-6 md-phone:left-8 z-50 animate-scale ';
                 overlayClassname = 'fixed bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col';
             }   else {
                 // neutral bottom state
-                barsClassname = ' fixed bottom-12 rounded-full bg-zinc-600 h-12 w-12 z-50 left-6 md-phone:left-8 animate-popIn ';
+                barsClassname = ' fixed bottom-12 rounded-full bg-zinc-600 h-12 w-12 md-phone:h-16 md-phone:w-16 z-50 left-6 md-phone:left-8 animate-popIn ';
                 overlayClassname = '';
             }
         }   else {
             if (showOverlay) {
                 // overlayed top state
-                barsClassname = ' fixed top-4 md-phone:top-8 z-50 left-4 md-phone:left-8 bg-zinc-600 animate-scale h-12 w-12 rounded-full z-50 transition-colors duration-200 ';
+                barsClassname = ' fixed top-6 md-phone:top-8 z-50 left-6 md-phone:left-8 bg-zinc-600 animate-scale h-12 w-12 md-phone:h-16 md-phone:w-16 rounded-full z-50 transition-colors duration-200 ';
                 overlayClassname = 'fixed top-4 left-1/2 transform -translate-x-1/2 flex flex-col ';
             }   else {
                 // neutral top state
-                barsClassname = ' absolute top-6 md-phone:top-8 z-50 left-6 md-phone:left-8 animate-scale ';
+                barsClassname = ' absolute top-6 md-phone:top-8 z-50 left-6  md-phone:h-16 md-phone:w-16 md-phone:left-8 animate-scale ';
                 overlayClassname = '';
             }
         }
@@ -76,7 +76,7 @@ export default function optionBars () {
     return (
         <>
             <div className={` ${barsClassname} cursor-pointer flex justify-center items-center`}>
-                <FaBars className='text-lighter-gold text-3xl'
+                <FaBars className='text-lighter-gold text-3xl md-phone:text-4xl'
                 onClick={handleBarClick}/>
             </div>
             {showOverlay && 

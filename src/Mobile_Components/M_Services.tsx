@@ -8,11 +8,11 @@ export default function M_Services() {
 
     return (
         <>
-            <div  id="m-service-section" className="py-8 h-full w-screen bg-button-dark flex flex-col justify-center items-center">
+            <div  id="m-service-section" className="h-full w-screen bg-button-dark flex flex-col justify-center items-center py-10 md-phone:py-20 ">
                 <h3 className="text-white">our services</h3>
                 <div className="mt-2 w-4/5 md-phone:w-3/5 h-full bg-near-white rounded-lg text-sm p-5">
                     <div className='flex flex-col items-center'>
-                        <p className='w-4/5 text-zinc-700 text-sm text-center'> *Contact or visit us in-store for a free quote! </p>
+                        <p className='w-4/5 text-zinc-700 text-sm md-phone:text-base text-center'> *Contact or visit us in-store for a free quote! </p>
                     </div>
                     {servicesList.map((service: { sectionName: string; sectionContent: { serviceName: string }[] }) => (
                         <div className='pl-2 pb-4' key={service.sectionName}>

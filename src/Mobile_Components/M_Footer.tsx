@@ -1,15 +1,15 @@
 export default function M_Footer() {
     const footerText = {
-        className: "text-sm text-white",
+        className: "text-sm md-phone:text-lg text-white",
       };
     
       const footerTitle = {
-        className: "text-sm text-lighter-gold"
+        className: "text-sm md-phone:text-xl text-lighter-gold"
       }
 
     return (
         <>
-        <div id="m-contact-section" className="my-12 flex flex-col justify-center items-center">
+        <div id="m-contact-section" className="my-10 md-phone:my-20 flex flex-col justify-center items-center">
               <h1 {...footerTitle}>OPENING HOURS:</h1>
               <p {...footerText}>Monday</p>
               <p {...footerText}>CLOSED</p>

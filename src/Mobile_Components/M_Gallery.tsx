@@ -28,19 +28,19 @@ export default function M_Gallery() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     
     const buttonBright = {
-        className: 'px-4 py-0.5 mx-0.5 h-full bg-button-light text-button-text-light rounded-3xl text-sm animate-scale duration-500 cursor-pointer ',
+        className: 'px-2 sm-phone:px-4 md-phone:px-5 py-0.5 mx-0.5 md-phone:mx-1 h-full bg-button-light text-button-text-light rounded-3xl text-sm md-phone:text-base animate-scale duration-500 cursor-pointer  flex justify-center items-center',
     };
 
     const buttonDim = {
-        className: 'px-4 py-0.5 mx-0.5 h-full bg-button-dark text-button-text-dark rounded-3xl text-sm cursor-pointer ',
+        className: 'px-2 sm-phone:px-4 md-phone:px-5 py-0.5 mx-0.5 md-phone:mx-1 h-full bg-button-dark text-button-text-dark rounded-3xl text-sm md-phone:text-base cursor-pointer flex justify-center items-center',
     };
 
     return (
         
         <>
-        <div id="m-gallery-section" className="my-8 w-screen flex flex-col justify-center items-center z-0">
+        <div id="m-gallery-section" className="my-10 md-phone:my-20 w-screen flex flex-col justify-center items-center z-0">
         <h3 className="text-white">view our gallery</h3>
-            <div className='my-1 flex flex-row justify-between items-center'>
+            <div className='my-1 flex flex-row justify-between items-center md-phone:h-10 '>
                 <p className={selection === 'section_general' ? buttonBright.className : buttonDim.className}
                 onClick={() => {setSelection('section_general'); setImageIndex(0);}}>
                     General

@@ -23,12 +23,12 @@ export default function NavBarMobile() {
         <>
             <div className="flex flex-col w-screen h-screen bg-[url('../app/Assets/Images/Mobile_bg.png')] bg-cover bg-center justify-center items-center">
                 <div className="flex flex-row justify-center items-center px-2">
-                    <h2 className="text-white text-3xl sm-phone:text-3xl md-phone:text-5xl">HAIR YOU GO</h2>
+                    <h2 className="text-white text-2xl sm-phone:text-3xl md-phone:text-5xl">HAIR YOU GO</h2>
                     <RiScissorsFill className="text-white ml-1" size="2.2em" style = {{transform: 'rotate(90deg)' }}/>  
                 </div>
-                {/* <p className="text-white text-lg">Your hair, our passion</p> */}
-                <div className="w-60 my-0.5 md-phone:w-80 md-phone:my-1 h-0.5 bg-white"></div>
-                <h3 className="sm-phone:text-xl md-phone:text-3xl text-white">YOUR HAIR, OUR PASSION</h3>
+
+                <div className="w-52 sm-phone:w-60 my-0.5 md-phone:w-80 md-phone:my-1 h-0.5 bg-white"></div>
+                <h3 className="text-base sm-phone:text-xl md-phone:text-3xl text-white mt-1">YOUR HAIR, OUR PASSION</h3>
                 <div className="flex flex-row mt-5 w-4/5 px-6 justify-evenly">
                     <a href="https://g.co/kgs/i3gjw9z" target="_blank" rel="noopener noreferrer">
                         <FaGoogle {...landingIcons} />
@@ -43,17 +43,15 @@ export default function NavBarMobile() {
                     </a>
                 </div>
 
-                <div className=" absolute bottom-10 flex justify-center items-center">
-                    <p 
-                    onClick={() => {
+                <div className={` absolute bottom-10 flex justify-center items-center rounded-full bg-gradient-to-r from-warm-gold to-lighter-gold
+                 md-phone:h-16 md-phone:w-52 ${discoverClicked ? 'animate-scale' : ''}`}
+                        onClick={() => {
                         handleDiscoverClick();
                         const element = document.getElementById("m-about-section");
                         if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }}}
-                        className={`text-sm cursor-pointer font-JostM px-6 py-3 md-phone:h-12 md-phone:w-44 mb-1 md-phone:mb-2 
-                            bg-gradient-to-r from-warm-gold to-lighter-gold rounded-3xl text-center
-                            ${discoverClicked ? 'animate-scale' : ''}`}
+                        element.scrollIntoView({ behavior: 'smooth' });
+                        }}}>
+                    <p className={`text-sm md-phone:text-lg cursor-pointer font-JostM px-6 py-3`}
                     >Discover More...</p>
                 </div>
             </div>
