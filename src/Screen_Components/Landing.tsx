@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import FPDisplay from '../app/Assets/Images/After.png';
+import FPDisplay from '../app/Assets/webp_Images/After.webp';
 import { FaGoogle, FaInstagram, FaFacebook } from "react-icons/fa6";
 import { easeIn, motion } from 'framer-motion';
 

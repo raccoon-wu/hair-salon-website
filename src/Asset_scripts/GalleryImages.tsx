@@ -1,29 +1,29 @@
-import image9 from '../app/Assets/Images/Gallery (1).jpg';
-import image2 from '../app/Assets/Images/Gallery (2).jpg';
-import image3 from '../app/Assets/Images/Gallery (3).jpg';
-import image4 from '../app/Assets/Images/Gallery (4).jpg';
-import image5 from '../app/Assets/Images/Gallery (5).jpg';
-import image6 from '../app/Assets/Images/Gallery (6).jpg';
-import image7 from '../app/Assets/Images/Gallery (7).jpg';
-import image8 from '../app/Assets/Images/Gallery (8).jpg';
-import image1 from '../app/Assets/Images/Gallery (9).jpg';
+import image9 from '../app/Assets/webp_Images/Gallery (1).webp';
+import image2 from '../app/Assets/webp_Images/Gallery (2).webp';
+import image3 from '../app/Assets/webp_Images/Gallery (3).webp';
+import image4 from '../app/Assets/webp_Images/Gallery (4).webp';
+import image5 from '../app/Assets/webp_Images/Gallery (5).webp';
+import image6 from '../app/Assets/webp_Images/Gallery (6).webp';
+import image7 from '../app/Assets/webp_Images/Gallery (7).webp';
+import image8 from '../app/Assets/webp_Images/Gallery (8).webp';
+import image1 from '../app/Assets/webp_Images/Gallery (9).webp';
 
-import cut1 from '../app/Assets/Images/Cut (1).jpg';
-import cut2 from '../app/Assets/Images/Cut (2).jpg';
-import cut3 from '../app/Assets/Images/Cut (3).jpg';
-import cut4 from '../app/Assets/Images/Cut (4).jpg';
-import cut5 from '../app/Assets/Images/Cut (5).jpg';
-import cut6 from '../app/Assets/Images/Cut (6).jpg';
-import cut7 from '../app/Assets/Images/Cut (7).jpg';
-import cut8 from '../app/Assets/Images/Cut (8).jpg';
-import cut9 from '../app/Assets/Images/Cut (9).jpg';
+import cut1 from '../app/Assets/webp_Images/Cut (1).webp';
+import cut2 from '../app/Assets/webp_Images/Cut (2).webp';
+import cut3 from '../app/Assets/webp_Images/Cut (3).webp';
+import cut4 from '../app/Assets/webp_Images/Cut (4).webp';
+import cut5 from '../app/Assets/webp_Images/Cut (5).webp';
+import cut6 from '../app/Assets/webp_Images/Cut (6).webp';
+import cut7 from '../app/Assets/webp_Images/Cut (7).webp';
+import cut8 from '../app/Assets/webp_Images/Cut (8).webp';
+import cut9 from '../app/Assets/webp_Images/Cut (9).webp';
 
-import colour1 from '../app/Assets/Images/Colour (1).jpg';
-import colour2 from '../app/Assets/Images/Colour (2).jpg';
-import colour3 from '../app/Assets/Images/Colour (3).jpg';
-import colour4 from '../app/Assets/Images/Colour (4).jpg';
-import colour5 from '../app/Assets/Images/Colour (5).jpg';
-import colour6 from '../app/Assets/Images/Colour (6).jpg';
+import colour1 from '../app/Assets/webp_Images/Colour (1).webp';
+import colour2 from '../app/Assets/webp_Images/Colour (2).webp';
+import colour3 from '../app/Assets/webp_Images/Colour (3).webp';
+import colour4 from '../app/Assets/webp_Images/Colour (4).webp';
+import colour5 from '../app/Assets/webp_Images/Colour (5).webp';
+import colour6 from '../app/Assets/webp_Images/Colour (6).webp';
 
 const images = {
   section_general: [

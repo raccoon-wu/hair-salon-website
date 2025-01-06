@@ -56,7 +56,7 @@ export default function M_Reviews() {
                             ))}
                 </Swiper>          
                 <div className='w-screen flex justify-center items-center'>
-                    <div className=' swiper-custom-numbers font-JostR text-lg'></div>
+                    <div className=' swiper-custom-numbers font-JostR text-lg text-center'></div>
                 </div>              
                     
                     {/* <div className='h-[100px] w-[100px] bg-yellow-800'></div> */}

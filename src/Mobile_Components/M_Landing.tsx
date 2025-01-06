@@ -21,7 +21,7 @@ export default function NavBarMobile() {
 
     return (
         <>
-            <div className="flex flex-col w-screen h-screen bg-[url('../app/Assets/Images/Mobile_bg.png')] bg-cover bg-center justify-center items-center">
+            <div className="flex flex-col w-screen h-screen bg-[url('../app/Assets/webp_Images/Mobile_bg.webp')] bg-cover bg-center justify-center items-center">
                 <div className="flex flex-row justify-center items-center px-2">
                     <h2 className="text-white text-2xl sm-phone:text-3xl md-phone:text-5xl">HAIR YOU GO</h2>
                     <RiScissorsFill className="text-white ml-1" size="2.2em" style = {{transform: 'rotate(90deg)' }}/>  
