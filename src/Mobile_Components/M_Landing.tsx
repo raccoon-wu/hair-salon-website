@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function NavBarMobile() {
     const landingIcons = {
-        className: "text-2xl md-phone:text-4xl min-h cursor-pointer rounded-2xl duration-300",
+        className: "text-2xl sm-phone:text-3xl md-phone:text-4xl min-h cursor-pointer rounded-2xl duration-300",
         style: {
           color: '#FCE295', 
         },

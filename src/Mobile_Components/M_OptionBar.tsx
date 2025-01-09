@@ -49,7 +49,7 @@ export default function optionBars () {
                 overlayClassname = 'fixed top-4 left-1/2 transform -translate-x-1/2 flex flex-col ';
             }   else {
                 // neutral top state
-                barsClassname = ' absolute top-6 md-phone:top-8 z-50 left-6  md-phone:h-16 md-phone:w-16 md-phone:left-8 animate-scale ';
+                barsClassname = ' absolute top-6 md-phone:top-8 z-50 left-6 h-12 w-12 md-phone:h-16 md-phone:w-16 md-phone:left-8 animate-scale ';
                 overlayClassname = '';
             }
         }
