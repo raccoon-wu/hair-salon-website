@@ -7,6 +7,7 @@ import LandingPage from "@/Screen_Components/Landing";
 import Footer from "@/Screen_Components/Footer";
 import Gallery from "@/Screen_Components/Gallery";
 import Reviews from "@/Screen_Components/Reviews";
+import Loading from "@/Screen_Components/Loading";
 
 import M_Landing from "@/Mobile_Components/M_Landing"
 import M_About from '@/Mobile_Components/M_About';
@@ -47,21 +48,41 @@ const useIsMobile = (breakpoint = 768) => {
   return isMobile;
 };
 
+
 export default function Home() {
 
   const isMobile = useIsMobile();
+  const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      const handleLoad = () => {
+        console.log('am Loaded');
+        setLoading(false);
+      };
+
+      if (document.readyState === "complete") {
+        handleLoad();
+      } else {
+        window.addEventListener("load", handleLoad);
+      }
+
+      return () => window.removeEventListener("load",handleLoad);
+    }, []);
+
 
   return (
     <>
-    {isMobile ? (
+    {loading? <Loading/> : 
+    <>
+        {isMobile ? (
         <>
-        <M_Landing/>
-        <M_OptionBar/>
-        <M_About/>
-        <M_Reviews/>
-        <M_Gallery/>
-        <M_Services/>
-        <M_Footer/>
+          <M_Landing/>
+          <M_OptionBar/>
+          <M_About/>
+          <M_Reviews/>
+          <M_Gallery/>
+          <M_Services/>
+          <M_Footer/>
  
         </>):(
         <>
@@ -71,6 +92,9 @@ export default function Home() {
           <Gallery/>
           <Footer/>
         </>)}
+    </>
+    }
+
     </>
   );
 }
