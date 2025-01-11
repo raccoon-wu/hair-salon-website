@@ -1,7 +1,7 @@
 import { FaBars } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 
-export default function optionBars () {
+export default function OptionBars () {
 
     const screenFactor = 400;
     const [scrollPosition, setScrollPosition] = useState(0);

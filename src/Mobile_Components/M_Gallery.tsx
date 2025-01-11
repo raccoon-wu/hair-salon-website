@@ -17,6 +17,7 @@ type ImageSections = keyof typeof images;
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import Image from 'next/image';
 
 
 export default function M_Gallery() {
@@ -74,14 +75,18 @@ export default function M_Gallery() {
                 style={{
                     '--swiper-navigation-size': '20px',
                     '--swiper-navigation-color': 'white',
-                }}
+                } as React.CSSProperties}
                 >
 
-                {images[selection].map((index) => (
-                    <SwiperSlide className='w-4/5 flex justify-center items-center z-10'>
-                        <img className='px-16' src={index.src}/>
-                    </SwiperSlide>
-                ))}
+            {images[selection].map((image, idx) => (
+                <SwiperSlide
+                    key={idx} // Use 'idx' or a unique property of the image object
+                    className="w-4/5 flex justify-center items-center z-10"
+                >
+                    <img className="px-16" src={image.src}/>
+                </SwiperSlide>
+            ))}
+
             </Swiper>
             <div className='mt-3 w-screen flex justify-center items-center text-white font-JostR'>
                 <div>

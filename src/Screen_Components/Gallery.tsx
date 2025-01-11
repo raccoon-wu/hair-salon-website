@@ -39,7 +39,7 @@ export default function Gallery() {
     if (isInView) {
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
   // this useEffect listens for changes in isInView => when it becomes true, runs code inside
 
   return (

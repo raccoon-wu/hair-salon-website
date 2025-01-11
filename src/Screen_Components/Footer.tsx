@@ -22,14 +22,14 @@ export default function Footer() {
   }
 
   const ref = useRef(null);
-  const isInView = useInView(ref, {once:true, amount:0.5 } as any);
+  const isInView = useInView(ref, {once:true, amount:0.5 });
   const mainControls = useAnimation();
 
   useEffect(() => {
     if(isInView){
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
     return (
       <>

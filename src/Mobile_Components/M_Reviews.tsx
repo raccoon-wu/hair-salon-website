@@ -16,7 +16,7 @@ export default function M_Reviews() {
     const starStyle = { className: 'text-lg md-phone:text-xl', }
     // Function to display stars if they are 4 or 5 stars
     const starsCount = () => {
-        let count = googleReviews[reviewIndex].stars;
+        const count = googleReviews[reviewIndex].stars;
         const starsDisplayed = [];
 
         for (let i = 0; i < count; i++) {
@@ -41,19 +41,21 @@ export default function M_Reviews() {
                         style={{
                             '--swiper-navigation-size': '20px',
                             '--swiper-navigation-color': 'black',
-                        }}>
+                        } as React.CSSProperties}>
 
-                        {googleReviews.map((reviews) => (
-                                <SwiperSlide className='h-full w-screen flex justify-center items-center my-2 '>
-                                            
-                                            <div className='h-[250px] flex flex-col justify-center items-center'>
-                                                <div className='flex flex-row my-1 md-phone:my-2 justify-center align-middle'>{starsCount()}</div>
-                                                <p className='w-4/5 my-1 md-phone:my-2  px-2 text-center'>{reviews.review}</p>
-                                                <p className='w-4/5 font-bold my-1 md-phone:my-2  px-2 text-center'> - {reviews.reviewer}</p>                                                            
-                                            </div>
-                                            
-                                </SwiperSlide>
-                            ))}
+                    {googleReviews.map((reviews, index) => (
+                        <SwiperSlide 
+                            key={index}  // Add the key prop here
+                            className='h-full w-screen flex justify-center items-center my-2'
+                        >
+                            <div className='h-[250px] flex flex-col justify-center items-center'>
+                                <div className='flex flex-row my-1 md-phone:my-2 justify-center align-middle'>{starsCount()}</div>
+                                <p className='w-4/5 my-1 md-phone:my-2 px-2 text-center'>{reviews.review}</p>
+                                <p className='w-4/5 font-bold my-1 md-phone:my-2 px-2 text-center'> - {reviews.reviewer}</p>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+
                 </Swiper>          
                 <div className='w-screen flex justify-center items-center'>
                     <div className=' swiper-custom-numbers font-JostR text-lg text-center'></div>

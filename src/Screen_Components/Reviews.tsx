@@ -13,7 +13,7 @@ export default function Reviews() {
   const isInView = useInView(ref, { 
     once: true,
     amount: 0.5,
-  } as any);
+  });
 
   
   const mainControls = useAnimation();
@@ -22,7 +22,7 @@ export default function Reviews() {
     if (isInView){
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
     //Tracks which index to display since only one will display at a time
   const [reviewIndex, setReviewIndex] = useState(0);
@@ -40,7 +40,7 @@ export default function Reviews() {
 
     //Function to display stars if they are 4 or 5 stars
   const starsCount = () => {
-    let count: number = googleReviews[reviewIndex].stars;
+    const count: number = googleReviews[reviewIndex].stars;
     if (count === 5){ 
       return (      
         <>             
@@ -81,7 +81,7 @@ export default function Reviews() {
                   {starsCount()}
                 </div>
 
-                <p className="z-10 text-base lg:text-xl w-3/5 m-2 text-center cursor-default">'{currentReview.review}'</p>
+                <p className="z-10 text-base lg:text-xl w-3/5 m-2 text-center cursor-default">&apos;{currentReview.review}&apos;</p>
                 
                 <p className="z-10 text-base lg:text-xl font-bold text-center cursor-default">- {currentReview.reviewer}</p>
                 
