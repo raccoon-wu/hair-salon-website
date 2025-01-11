@@ -40,7 +40,6 @@ export default function LandingPage() {
         ease: "easeInOut",
         type: 'spring',
         bounce:0.4,
-        
       },
     },
   }

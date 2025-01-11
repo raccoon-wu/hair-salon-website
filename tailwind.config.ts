@@ -71,11 +71,17 @@ const config: Config = {
             opacity: '1',
           },
         },
+
+        customBounce: {
+          '0%, 100%': { transform: 'translateY(0)' }, // Start and end at y: 0
+          '50%': { transform: 'translateY(20px)' },  // Bounce to y: 20px
+        }
       },
       animation: {
         scale: 'buttonScaleUpDown 0.3s ease-in-out',
         popIn: 'buttonPopIn 0.3s ease-out',
         slowSpin: 'spin 3s linear infinite',
+        slowBounce: 'customBounce 0.3s ease-out'
       },
     },
   },
