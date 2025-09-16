@@ -71,7 +71,7 @@ export default function Footer() {
               <br/>
               
               <p {...footerText}>Sunday</p>
-              <p {...footerText}>9.00am - 5.00pm</p>
+              <p {...footerText}>10.00am - 5.00pm</p>
             </motion.div>
             <motion.div variants={{
           hidden: {opacity: 0, x:10},
